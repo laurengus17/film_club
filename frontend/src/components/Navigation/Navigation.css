@@ -1,0 +1,64 @@
+.outer-navigation {
+    color: #727272;
+    text-align: center;
+}
+
+nav {
+    margin: 25px;
+    background: #f9f9f9;
+    padding: 16px;
+}
+
+.navigation {
+    list-style: none;
+    display: flex;
+}
+
+li {
+    margin: 5px;
+    display: block;
+    transition-duration: 0.5s;
+}
+
+li:hover {
+    cursor: pointer;
+}
+
+.home,
+.signup,
+.login {
+    text-decoration: none;
+    color: #8f8f8f;
+    font-size: 24px;
+    font-weight: 400;
+    transition: all 0.5s ease-in-out;
+    position: relative;
+    text-transform: uppercase;
+}
+
+.home:hover,
+.signup:hover,
+.login:hover {
+    color: red;
+}
+
+.profile-icon {
+    font-size: 20px;
+    color: black;
+}
+
+.profile-button {
+    padding: 5px;
+    margin: 0 10px;
+}
+
+.profile-dropdown {
+    height: 120px;
+    width: 100px;
+    border: 1px #000;
+    background-color: lightblue;
+}
+
+.profile-dropdown li {
+    padding: 5px; 
+}
