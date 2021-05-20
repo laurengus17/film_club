@@ -35,22 +35,22 @@ return (
         </ul>
         <h2 className='login-title'>Login</h2>
         <div className='login-body'>
-                <input
-                className='input'
-                placeholder='Username or Email'
-                type="text"
-                value={credential}
-                onChange={(e) => setCredential(e.target.value)}
-                required
-                />
-                <input
-                className='input'
-                type="password"
-                placeholder='Password'
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                required
-                />
+            <input
+            className='input'
+            placeholder='Username or Email'
+            type="text"
+            value={credential}
+            onChange={(e) => setCredential(e.target.value)}
+            required
+            />
+            <input
+            className='input'
+            type="password"
+            placeholder='Password'
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
+            />
         </div>
         <button type="submit" className='login-button'>Log In</button>
         </form>
