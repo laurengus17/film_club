@@ -11,6 +11,9 @@ const [email, setEmail] = useState("");
 const [username, setUsername] = useState("");
 const [password, setPassword] = useState("");
 const [confirmPassword, setConfirmPassword] = useState("");
+const [image, setImage] = useState(null);
+  // for multuple file upload
+  //   const [images, setImages] = useState([]);
 const [errors, setErrors] = useState([]);
 
 if (sessionUser) return (
@@ -21,7 +24,7 @@ const handleSubmit = (e) => {
     e.preventDefault();
     if (password === confirmPassword) {
     setErrors([]);
-    return dispatch(sessionActions.signup({ email, username, password }))
+    return dispatch(sessionActions.signup({ email, username, password, image }))
         .catch(async (res) => {
         const data = await res.json();
         if (data && data.errors) setErrors(data.errors);
@@ -29,6 +32,17 @@ const handleSubmit = (e) => {
     }
     return setErrors(['Confirm Password field must be the same as the Password field']);
 };
+
+const updateFile = (e) => {
+    const file = e.target.files[0];
+    if (file) setImage(file);
+};
+
+  // for multiple file upload
+  //   const updateFiles = (e) => {
+  //     const files = e.target.files;
+  //     setImages(files);
+  //   };
 
 return (
 <div className='signup-outer'>
@@ -71,9 +85,33 @@ return (
                 onChange={(e) => setConfirmPassword(e.target.value)}
                 required
                 />
+                <input 
+                type="file" 
+                onChange={updateFile} 
+                className='input'
+                />
+                {/* <label>
+                    Multiple Upload
+                    <input 
+                    type="file"
+                    multiple
+                    onChange={updateFiles} />
+                </label> */}
         </div>
         <button type="submit" className='signup-button'>Sign Up</button>
         </form>
+        <div>
+            {sessionUser && (
+            <div>
+                <h1>{sessionUser.username}</h1>
+                <img
+                style={{ width: "150px" }}
+                src={sessionUser.profileImageUrl}
+                alt="profile"
+                />
+            </div>
+            )}
+        </div>
     </div>
 </div>
 );

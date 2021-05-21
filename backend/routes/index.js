@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const apiRouter = require('./api');
+// var AWS = require('aws-sdk/dist/aws-sdk-react-native'); (when i wanna use sdk)
 
 router.use('/api', apiRouter);
 
