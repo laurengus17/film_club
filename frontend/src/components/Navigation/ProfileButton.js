@@ -38,6 +38,7 @@ return (
     </button>
     {showMenu && (
         <ul className="profile-dropdown">
+        <img alt='profile' className='profile-photo' src={user.profileImageUrl} />
         <li>{user.username}</li>
         <li>{user.email}</li>
         <li>
