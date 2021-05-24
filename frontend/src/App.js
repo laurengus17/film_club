@@ -22,7 +22,7 @@ function App() {
           <SignupFormPage />
         </Route>
 
-        <Route path="/album">
+        <Route path="/api/album">
           <AlbumForm />
         </Route>
       </Switch>

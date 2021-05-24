@@ -1,3 +1,5 @@
+import { csrfFetch } from './csrf';
+
 const LOAD_ALBUMS = 'album/loadAlbums';
 const ADD_ALBUM = 'album/addAlbum';
 const EDIT_ALBUM = 'album/editAlbum';
@@ -32,11 +34,12 @@ const removeAlbum = () => {
 // THUNKS
 
 export const getAlbums = () => async (dispatch) => {
-    const res = await fetch('/api/album');
+    const res = await csrfFetch('/api/album');
 
     if(res.ok) {
         const albums = await res.json();
         dispatch(loadAlbums(albums));
+        return res;
     }
 }
 
