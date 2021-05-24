@@ -1,22 +1,37 @@
-import React, { useState } from 'react';
-import * as sessionActions from '../../store/session';
+import React, { useEffect, useState } from 'react';
+import { getAlbums } from '../../store/album';
 import { useDispatch, useSelector } from 'react-redux';
-import { Redirect } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import './AlbumForm.css';
 
 function AlbumForm() {
     const dispatch = useDispatch();
-    const sessionUser = useSelector(state => state.session.user);
+    const history = useHistory();
+    const albums = useSelector(state => Object.values(state.albums));
+    console.log(albums);
     
     const [title, setTitle] = useState('');
     const [description, setDescription] = useState('');
     const [errors, setErrors] = useState([]);
 
-    const handleSubmit = (e) => {
+    useEffect(() => {
+        dispatch(getAlbums())
+    }, [dispatch]);
+
+    const handleSubmit = async (e) => {
         e.preventDefault();
         setErrors([]);
 
-        // dispatch here
+        const payload = {
+            title,
+            description
+        }
+
+        // let createdAlbum = await dispatch(createAlbum(payload))
+
+        // if (createdAlbum) {
+        //     history.push(`/album/${createdAlbum.id}`);
+        // }
     }
 
     return (
@@ -45,7 +60,7 @@ function AlbumForm() {
                         required
                         />
                     </div>
-                    <button type='submit' className='submit-button'>Submit</button>
+                    <button type='submit' className='submit-button'>Create Album</button>
                 </form>
             </div>
         </div>
