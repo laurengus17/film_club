@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { getAlbums, updateAlbum } from '../../store/album';
+import { getAlbums, updateAlbum, deleteAlbum } from '../../store/album';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import './UserHomePage.css';
@@ -57,6 +57,16 @@ function UserHomePage () {
         }
     }
 
+    const handleCancelClick = (e) => {
+        e.preventDefault();
+        history.push(`/users`);
+    }
+
+    const handleDelete = async (e) => {
+        e.preventDefault();
+        dispatch(deleteAlbum(albums));
+    }
+
     return (
         <div>
             {albums.map((album) => {
@@ -68,8 +78,9 @@ function UserHomePage () {
                         <p>{album.description}</p>
                     </li>
                     <div>
-                    <button onclick={openEdit} className='edit-button'>Edit
+                    <button onClick={openEdit} className='edit-button'>Edit
                     </button>
+                    <button onClick={handleDelete}>Delete</button>
                     {showEdit && (
                         <div>
                             <form onSubmit={handleSubmit} className='edit-dropdown'>
@@ -89,8 +100,9 @@ function UserHomePage () {
                                 onChange={(e) => setDescription(e.target.value)}
                                 required>
                                 </input>
+                            <button type='submit'>Update Album</button>
+                            <button type='button' onClick={handleCancelClick}>Cancel</button>
                             </form>
-                            <button>Delete</button>
                         </div>
                     )}
                     </div>
