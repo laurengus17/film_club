@@ -8,10 +8,9 @@ import * as albumActions from "../../store/album";
 function AlbumForm() {
     const dispatch = useDispatch();
     const history = useHistory();
-    const albums = useSelector(state => Object.values(state.albums));
+    // const albums = useSelector(state => Object.values(state.albums));
     const sessionUser = useSelector(state => state.session.user);
     console.log(sessionUser)
-    console.log(albums);
     
     const [title, setTitle] = useState('');
     const [description, setDescription] = useState('');
@@ -34,7 +33,7 @@ function AlbumForm() {
         let createdAlbum = await dispatch(createAlbum(payload))
         console.log(createdAlbum)
         if (createdAlbum) {
-            history.push(`/album/${createdAlbum.id}`);
+            history.push(`/users`);
         }
     }
 

@@ -1,0 +1,12 @@
+.edit-button {
+    padding: 5px;
+    margin: 0 10px;
+}
+
+
+.edit-dropdown {
+    height: 120px;
+    width: 100px;
+    border: 1px #000;
+    background-color: lightblue;
+}

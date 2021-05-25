@@ -12,8 +12,8 @@ let sessionLinks;
 if (sessionUser) {
     sessionLinks = (
     <div>
-    <ProfileButton user={sessionUser} />
     <NavLink to='/api/album'>Create Album</NavLink>
+    <ProfileButton user={sessionUser} />
     </div>
     );
 } else {

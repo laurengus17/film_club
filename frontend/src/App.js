@@ -5,6 +5,7 @@ import SignupFormPage from "./components/SignupFormPage";
 import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
 import AlbumForm from './components/AlbumFormPage/AlbumForm';
+import UserHomePage from './components/UserHomePage'
 
 function App() {
   const dispatch = useDispatch();
@@ -24,6 +25,10 @@ function App() {
 
         <Route path="/api/album">
           <AlbumForm />
+        </Route>
+
+        <Route path='/users'>
+          <UserHomePage />
         </Route>
       </Switch>
     )}

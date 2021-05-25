@@ -29,6 +29,14 @@ const validateSignup = [
     handleValidationErrors,
 ];
 
+router.get('/', asyncHandler(async (req, res) => {
+    const albums = await Album.findAll({
+        include: [ User ],
+        order: [['createdAt', 'DESC']]
+    })
+    res.json(albums);
+}))
+
 // Sign up
 // Connect the singleMulterUpload middleware to your POST /api/users route, and 
 // then you can access the file in your request under the key of file - req.file
