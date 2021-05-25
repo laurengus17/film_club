@@ -1,17 +1,21 @@
 import React, { useEffect, useState } from 'react';
-import { getAlbums } from '../../store/album';
+import { getAlbums, createAlbum } from '../../store/album';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import './AlbumForm.css';
+import * as albumActions from "../../store/album";
 
 function AlbumForm() {
     const dispatch = useDispatch();
     const history = useHistory();
     const albums = useSelector(state => Object.values(state.albums));
+    const sessionUser = useSelector(state => state.session.user);
+    console.log(sessionUser)
     console.log(albums);
     
     const [title, setTitle] = useState('');
     const [description, setDescription] = useState('');
+    // const [] = useState();
     const [errors, setErrors] = useState([]);
 
     useEffect(() => {
@@ -20,18 +24,18 @@ function AlbumForm() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        setErrors([]);
 
         const payload = {
             title,
-            description
+            description,
+            userId: sessionUser.id
         }
 
-        // let createdAlbum = await dispatch(createAlbum(payload))
-
-        // if (createdAlbum) {
-        //     history.push(`/album/${createdAlbum.id}`);
-        // }
+        let createdAlbum = await dispatch(createAlbum(payload))
+        console.log(createdAlbum)
+        if (createdAlbum) {
+            history.push(`/album/${createdAlbum.id}`);
+        }
     }
 
     return (

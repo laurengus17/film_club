@@ -11,7 +11,10 @@ const sessionUser = useSelector(state => state.session.user);
 let sessionLinks;
 if (sessionUser) {
     sessionLinks = (
+    <div>
     <ProfileButton user={sessionUser} />
+    <NavLink to='/api/album'>Create Album</NavLink>
+    </div>
     );
 } else {
     sessionLinks = (

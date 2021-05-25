@@ -19,9 +19,10 @@ const addAlbum = (album) => {
     };
 };
 
-const editAlbum = () => {
+const editAlbum = (album) => {
     return {
         type: EDIT_ALBUM,
+        album
     };
 };
 
@@ -43,13 +44,56 @@ export const getAlbums = () => async (dispatch) => {
     }
 }
 
-// createAlbum()
+export const createAlbum = ({ title, description, userId }) => async (dispatch) => {
+    const album = {
+        title, 
+        description,
+        userId
+    }
 
+    const res = await csrfFetch('/api/album', {
+        method: `POST`,
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(album)
+    })
+
+    if(res.ok) {
+        const data = await res.json();
+        dispatch(addAlbum(data.album));
+        return data;
+    }
+}
+
+export const updateAlbum = ({ title, description, userId }) => async (dispatch) => {
+    const album = { title, description, userId }
+    const res = await csrfFetch(`/api/album/${album.id}`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({album})
+    });
+
+    if(res.ok) {
+        const data = await res.json();
+        dispatch(editAlbum(data));
+        return data;
+    }
+}
+
+export const deleteAlbum = (album) => async (dispatch) => {
+    const res = await csrfFetch(`/api/album/${album.id}`, {
+        method: 'DELETE'
+    });
+
+    if(res.ok) {
+        dispatch(removeAlbum(album.id))
+    }
+}
 //initial state
 const initialState = {};
 
 // reducers
 const albumsReducer = (state = initialState, action) => {
+    let newState;
     switch (action.type) {
         case LOAD_ALBUMS:
             const allAlbums = {};
@@ -60,6 +104,25 @@ const albumsReducer = (state = initialState, action) => {
                 ...allAlbums,
                 ...state
             };
+        case ADD_ALBUM:
+        {
+        newState = Object.assign({}, state);
+        newState.album = action.payload;
+        return newState;
+        }
+        case EDIT_ALBUM:
+        {
+            return {
+                ...state,
+                [action.album.id]: action.album
+            };
+        }
+        case REMOVE_ALBUM:
+        {
+            const newState = {...state}
+            delete newState[action.id]
+            return newState
+        }
         default:
             return state;
     }
