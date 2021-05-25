@@ -26,9 +26,10 @@ const editAlbum = (album) => {
     };
 };
 
-const removeAlbum = () => {
+const removeAlbum = (id) => {
     return {
         type: REMOVE_ALBUM,
+        id
     };
 };
 
@@ -64,9 +65,9 @@ export const createAlbum = ({ title, description, userId }) => async (dispatch) 
     }
 }
 
-export const updateAlbum = ({ title, description, userId }) => async (dispatch) => {
-    const album = { title, description, userId }
-    const res = await csrfFetch(`/api/album/${album.id}`, {
+export const updateAlbum = ({ title, description, userId }, id) => async (dispatch) => {
+    const album = { id, title, description, userId }
+    const res = await csrfFetch(`/api/album/${id}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({album})
@@ -79,13 +80,13 @@ export const updateAlbum = ({ title, description, userId }) => async (dispatch) 
     }
 }
 
-export const deleteAlbum = (album) => async (dispatch) => {
-    const res = await csrfFetch(`/api/album/${album.id}`, {
+export const deleteAlbum = (id) => async (dispatch) => {
+    const res = await csrfFetch(`/api/album/${id}`, {
         method: 'DELETE'
     });
 
     if(res.ok) {
-        dispatch(removeAlbum(album.id))
+        dispatch(removeAlbum(id))
     }
 }
 //initial state
@@ -107,14 +108,14 @@ const albumsReducer = (state = initialState, action) => {
         case ADD_ALBUM:
         {
         newState = Object.assign({}, state);
-        newState.album = action.payload;
+        newState[action.payload.id] = action.payload;
         return newState;
         }
         case EDIT_ALBUM:
         {
             return {
                 ...state,
-                [action.album.id]: action.album
+                [action.payload.id]: action.payload
             };
         }
         case REMOVE_ALBUM:

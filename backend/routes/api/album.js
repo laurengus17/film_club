@@ -39,14 +39,16 @@ router.post(
 );
 
 router.put('/:id', asyncHandler(async (req, res) => {
-    const { title, description, userId } = req.body;
-    const album = await Album.update(
-        {body: title, description, userId},
-        {where: {id:id}, returning: true }
-    );
-
+    const { id } = req.params;
+    console.log(id)
+    console.log(req.body.album)
+    const album = req.body.album;
+    const currentAlbum = await Album.findByPk(id);
+    const newAlbum = await currentAlbum.update({title: album.title, description: album.description});
+    console.log(currentAlbum, "CURRENT ALBUM")
+    // console.log()
     return res.json({
-        album,
+        newAlbum,
     });
 }));
 
