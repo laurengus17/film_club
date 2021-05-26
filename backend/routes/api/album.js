@@ -3,7 +3,6 @@ const asyncHandler = require('express-async-handler');
 
 const { check } = require('express-validator');
 const { handleValidationErrors } = require('../../utils/validation');
-const { requireAuth } = require('../../utils/auth');
 const { Album } = require('../../db/models');
 
 const router = express.Router();
@@ -40,13 +39,9 @@ router.post(
 
 router.put('/:id', asyncHandler(async (req, res) => {
     const { id } = req.params;
-    console.log(id)
-    console.log(req.body.album)
     const album = req.body.album;
     const currentAlbum = await Album.findByPk(id);
     const newAlbum = await currentAlbum.update({title: album.title, description: album.description});
-    console.log(currentAlbum, "CURRENT ALBUM")
-    // console.log()
     return res.json({
         newAlbum,
     });

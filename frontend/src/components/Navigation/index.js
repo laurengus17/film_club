@@ -11,20 +11,24 @@ const sessionUser = useSelector(state => state.session.user);
 let sessionLinks;
 if (sessionUser) {
     sessionLinks = (
-    <div>
-    <NavLink to='/api/album'>Create Album</NavLink>
+    <>
+    <div className='bar'>
+    <NavLink className='create-album' to='/api/album'>Create Album</NavLink>
+    </div>
+    <div className='bar'>
     <ProfileButton user={sessionUser} />
     </div>
+    </>
     );
 } else {
     sessionLinks = (
     <>
-        <li>
+        <div className='bar'>
         <NavLink className='signup' to="/signup">Sign Up</NavLink>
-        </li>
-        <li>
+        </div>
+        <div className='bar'>
         <LoginFormModal className='login' />
-        </li>
+        </div>
     </>
     );
 }
@@ -33,9 +37,9 @@ return (
 <div className='outer-navigation'>
     <nav>
         <ul className='navigation'>
-            <li>
+            <div className='bar'>
                 <NavLink className='home' exact to="/">Home</NavLink>
-            </li>
+            </div>
                 {isLoaded && sessionLinks}
         </ul>
     </nav>

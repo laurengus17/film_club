@@ -1,6 +1,6 @@
 body {
     position: relative;
-    background-color: beige;
+    background-color: #3AAFA9;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -11,7 +11,7 @@ body {
     background-color: #222;
 	border-radius: 15px;
 	height: 550px;
-	width: 350px;
+	width: 400px;
 	position: relative;
 	overflow: hidden;
 }
@@ -26,14 +26,15 @@ body {
 }
 
 .signup-title {
-    color: #fff;
+    color: #DEF2F1;
     font-size: 1.7em;
     text-align: center;
+    text-transform: uppercase;
 }
 
 .signup-body {
     border-radius: 15px;
-    background-color: #fff;
+    background-color: #FEFFFF;
     overflow: hidden;
     margin-top: 50px;
     opacity: 1;
@@ -48,14 +49,14 @@ body {
     height: 30px;
     line-height: 30px;
     padding: 8px 15px;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid #FEFFFF;
     width: 100%;
     font-size: 12px;
 }
 
 .signup-button {
     background-color: rgba(0,0,0,0.4);
-    color: rgba(256,256,256,0.7);
+    color: #DEF2F1;
     border: 0;
     border-radius: 15px;
     display: block;
@@ -67,4 +68,10 @@ body {
     cursor: pointer;
     opacity: 1;
     visibility: visible;
+}
+
+
+.signup-button:hover {
+    background: #2B7A78;
+    color: #DEF2F1;
 }

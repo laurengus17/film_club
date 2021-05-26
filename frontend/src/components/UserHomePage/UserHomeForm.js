@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState } from 'react';
 import { getAlbums, updateAlbum, deleteAlbum } from '../../store/album';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
@@ -8,7 +8,6 @@ function UserHomePage ({album}) {
     const dispatch = useDispatch();
     const history = useHistory();
     const sessionUser = useSelector(state => state.session.user);
-    const currentUserId = sessionUser.id
     const albumState = useSelector(state => state.albums);
     const albums = Object.values(albumState);
 

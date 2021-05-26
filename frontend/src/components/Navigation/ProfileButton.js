@@ -33,16 +33,16 @@ return (
     <>
     <button onClick={openMenu} className='profile-button'>
         <div className='profile-icon'>
-            <i className="fas fa-palette" />
+            <i className="fas fa-camera-retro" />
         </div>
     </button>
     {showMenu && (
         <ul className="profile-dropdown">
         <img alt='profile' className='profile-photo' src={user.profileImageUrl} />
-        <li>{user.username}</li>
+        <li>Hello, {user.username}</li>
         <li>{user.email}</li>
         <li>
-            <button onClick={logout}>Log Out</button>
+            <button className='user-logout-button' onClick={logout}>Log Out</button>
         </li>
         </ul>
     )}
