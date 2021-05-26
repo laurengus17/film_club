@@ -33,10 +33,7 @@ router.post(
     asyncHandler(async (req, res) => {
     const { title, description, userId, albumId } = req.body;
     const newImage = await singlePublicFileUpload(req.file);
-    console.log(newImage, 'HERE IS THE IMAGEEEE')
-    console.log(userId,'HERE IS THE USER')
     const photo = await Photo.create({ title, description, url: newImage, userId, albumId });
-    console.log(photo)
     return res.json({
         photo,
     });

@@ -6,7 +6,7 @@ import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
 import AlbumForm from './components/AlbumFormPage/AlbumForm';
 import UserHomePage from './components/UserHomePage'
-import CreatePhotoForm from './components/PhotoForm/CreatePhotoForm'
+import CreatePhotoForm from './components/PhotoForm/CreatePhotoForm';
 
 function App() {
   const dispatch = useDispatch();
@@ -32,9 +32,10 @@ function App() {
           <UserHomePage />
         </Route>
 
-        <Route path='/api/photo'>
+        <Route path='/api/photo/create/:albumId'>
           <CreatePhotoForm />
         </Route>
+
       </Switch>
     )}
   </>

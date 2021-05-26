@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useHistory } from 'react-router-dom';
+import { useHistory, useParams } from 'react-router-dom';
 import { getAlbums } from '../../store/album';
 import { getPhotos, createPhoto } from '../../store/photo';
 import './PhotoForm.css';
@@ -8,9 +8,8 @@ import './PhotoForm.css';
 function PhotoForm() {
     const dispatch = useDispatch();
     const history = useHistory();
-    const albumState = useSelector(state => state.albums);
+    const { albumId } = useParams()
     const sessionUser = useSelector(state => state.session.user);
-    const albums = Object.values(albumState);
 
     const [url, setUrl] = useState(null);
     const [title, setTitle] = useState('');
@@ -25,6 +24,7 @@ function PhotoForm() {
     dispatch(getPhotos())
     }, [dispatch]);
 
+
     const handleSubmit = async (e) => {
         e.preventDefault();
 
@@ -33,12 +33,7 @@ function PhotoForm() {
             description,
             url,
             userId: sessionUser.id,
-            albumId: albums.map((album) => {
-                if(album.userId === sessionUser.id) {
-                    return album.id
-                }
-                return []
-            })
+            albumId,
         }
 
         let createdPhoto = await dispatch(createPhoto(payload))

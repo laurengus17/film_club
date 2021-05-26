@@ -9,7 +9,6 @@ function AlbumForm() {
     const history = useHistory();
     // const albums = useSelector(state => Object.values(state.albums));
     const sessionUser = useSelector(state => state.session.user);
-    console.log(sessionUser)
     
     const [title, setTitle] = useState('');
     const [description, setDescription] = useState('');
@@ -30,7 +29,6 @@ function AlbumForm() {
         }
 
         let createdAlbum = await dispatch(createAlbum(payload))
-        console.log(createdAlbum)
         if (createdAlbum) {
             history.push(`/users`);
         }

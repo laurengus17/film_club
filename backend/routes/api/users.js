@@ -47,7 +47,6 @@ router.post(
     asyncHandler(async (req, res) => {
     const { email, password, username } = req.body;
     const profileImageUrl = await singlePublicFileUpload(req.file);
-    console.log(profileImageUrl)
     const user = await User.signup({ email, username, password, profileImageUrl });
 
     await setTokenCookie(res, user);

@@ -1,50 +1,48 @@
 import React, { useEffect, useState } from 'react';
-import { getAlbums, updateAlbum, deleteAlbum } from '../../store/album';
+import { getPhotos, updatePhoto, deletePhoto } from '../../store/photo';
 import { useDispatch, useSelector } from 'react-redux';
-import { useHistory } from 'react-router-dom';
-import './UserHomePage.css';
+import { useHistory, useParams } from 'react-router-dom';
+import './PhotoForm.css';
 
-function UserHomePage ({album}) {
+function UpdatePhotoForm ({ photo }) {
     const dispatch = useDispatch();
     const history = useHistory();
     const sessionUser = useSelector(state => state.session.user);
-    const albumState = useSelector(state => state.albums);
-    const albums = Object.values(albumState);
+    const photoState = useSelector(state => state.photos);
+    const photos = Object.values(photoState);
 
     const [title, setTitle] = useState('');
     const [description, setDescription] = useState('');
 
-
     useEffect(() => {
-        dispatch(getAlbums())
+        dispatch(getPhotos())
     }, [dispatch]);
 
     const handleSubmit = async (id) => {
         const payload = {
-            ...albums,
+            ...photos,
             title,
             description,
-            userId: sessionUser.id
         }
 
-        let updatedAlbum = await dispatch(updateAlbum(payload, id))
-        if (updatedAlbum) {
+        let updatedPhoto = await dispatch(updatePhoto(payload, id))
+        if (updatedPhoto) {
             history.push(`/users`);
         }
     }
 
     const handleDelete = async (id) => {
-        dispatch(deleteAlbum(id));
+    dispatch(deletePhoto(id));
     }
 
     return (
-    <div>
+        <div>
         <div> 
-            <form onSubmit={() => handleSubmit(album.id)} className='edit-form'>
+            <form onSubmit={() => handleSubmit(photo.id)} className='edit-form'>
                 <div className='edit-div'>
                 <input 
                 className='input'
-                placeholder={album.title}
+                placeholder={photo.title}
                 type='text'
                 value={title}
                 onChange={(e) => setTitle(e.target.value)}
@@ -52,7 +50,7 @@ function UserHomePage ({album}) {
                 </input>
                 <input
                 className='input'
-                placeholder={album.description}
+                placeholder={photo.description}
                 type="text"
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}
@@ -65,10 +63,10 @@ function UserHomePage ({album}) {
             <button type='submit' className='update-button'>Update Album</button>
         </div>
         <div>
-        <button className='delete-submit' onClick={() => handleDelete(albums.id)}>Delete</button>
+        <button className='delete-submit' onClick={() => handleDelete(photos.id)}>Delete</button>
         </div>
     </div>
     )
 }
 
-export default UserHomePage;
+export default UpdatePhotoForm;
