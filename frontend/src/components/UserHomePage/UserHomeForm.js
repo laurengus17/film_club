@@ -59,9 +59,11 @@ function UserHomePage ({album}) {
                 onChange={(e) => setDescription(e.target.value)}
                 required>
                 </input>
-                <button type='submit'>Update Album</button>
                 </div>
             </form>
+        </div>
+        <div>
+            <button type='submit' className='update-button'>Update Album</button>
         </div>
         <div>
         <button className='delete-submit' onClick={() => handleDelete(albums.id)}>Delete</button>

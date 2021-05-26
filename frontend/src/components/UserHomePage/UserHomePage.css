@@ -10,7 +10,7 @@ body {
 
 .edit-div {
     border-radius: 15px;
-    background-color: #fff;
+    background-color: #FEFFFF;
     overflow: hidden;
     margin-top: 50px;
     opacity: 1;
@@ -25,13 +25,14 @@ body {
     height: 30px;
     line-height: 30px;
     padding: 8px 15px;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid #FEFFFF;
     width: 100%;
     font-size: 12px;
 }
 
 .edit-submit,
-.delete-submit {
+.delete-submit,
+.update-button {
     background-color: rgba(0,0,0,0.4);
     color: rgba(256,256,256,0.7);
     border: 0;
@@ -45,4 +46,21 @@ body {
     cursor: pointer;
     opacity: 1;
     visibility: visible;
+}
+
+.albums-list {
+    list-style: none;
+}
+
+.edit-album-button,
+.add-photo-button {
+    background-color: #2B7A78;
+    color: #FEFFFF;
+    margin: 2px;
+}
+
+.edit-album-button:hover,
+.add-photo-button:hover {
+    background-color: #DEF2F1;
+    color: #2B7A78;
 }

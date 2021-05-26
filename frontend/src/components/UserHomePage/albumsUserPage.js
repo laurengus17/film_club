@@ -19,11 +19,12 @@ function SeparateAlbum({ album }) {
     }
     return (
         <div>
-                    <li key={album.id} album={album}>
+                    <li key={album.id} album={album} className='albums-list'>
                         <h2>{album.title}</h2>
                         <p>{album.description}</p>
-                        <button onClick={() => setActive(true)}>Edit Album</button>
-                        <button onClick={handleRoute}>Add Photo</button>
+                    {/* <div>if photo.albumId = album.id then {img src={photo.url}}</div> */}
+                        <button onClick={() => setActive(true)} className='edit-album-button'>Edit Album</button>
+                        <button onClick={handleRoute} className='add-photo-button'>Add Photo</button>
                         {active && (
                             <Modal onClose={() => setActive(false)}>
                                 <UserHomePage album={album}/>

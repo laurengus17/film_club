@@ -13,7 +13,10 @@ if (sessionUser) {
     sessionLinks = (
     <>
     <div className='bar'>
-    <NavLink className='create-album' to='/api/album'>Create Album</NavLink>
+    <NavLink className='create-album' to='/api/album'>New Album</NavLink>
+    </div>
+    <div className='bar'>
+    <NavLink className='user-page' to='/users'>Profile</NavLink>
     </div>
     <div className='bar'>
     <ProfileButton user={sessionUser} />

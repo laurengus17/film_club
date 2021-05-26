@@ -7,7 +7,7 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.outer-div {
+.photo-form-outer {
     background-color: #2B7A78;
 	border-radius: 15px;
     height: 400px;
@@ -16,7 +16,7 @@ body {
 	overflow: hidden;
 }
 
-.form-div {
+.photo-form-structure {
     position: absolute;
     top: 40%;
     left: 50%;
@@ -25,14 +25,14 @@ body {
     z-index: 5;
 }
 
-.album-h2 {
+.create-photo-title {
     color: #DEF2F1;
     font-size: 1.7em;
     text-align: center;
     text-transform: uppercase;
 }
 
-.form-body {
+.photo-body {
     border-radius: 15px;
     background-color: #FEFFFF;
     overflow: hidden;
@@ -54,7 +54,7 @@ body {
     font-size: 12px;
 }
 
-.submit-button {
+.submit-photo {
     background-color: rgba(0,0,0,0.4);
     color: #DEF2F1;
     border: 0;
@@ -70,7 +70,7 @@ body {
     visibility: visible;
 }
 
-.submit-button:hover {
+.submit-photo:hover {
     background: #DEF2F1;
     color: #2B7A78;
 }

@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { getAlbums } from '../../store/album';
 import { getPhotos, createPhoto } from '../../store/photo';
+import './PhotoForm.css';
 
 function PhotoForm() {
     const dispatch = useDispatch();
@@ -11,7 +12,7 @@ function PhotoForm() {
     const sessionUser = useSelector(state => state.session.user);
     const albums = Object.values(albumState);
 
-    const [image, setImage] = useState(null);
+    const [url, setUrl] = useState(null);
     const [title, setTitle] = useState('');
     const [description, setDescription] = useState('');
     const [errors, setErrors] = useState([]);
@@ -30,11 +31,11 @@ function PhotoForm() {
         const payload = {
             title,
             description,
-            image,
+            url,
             userId: sessionUser.id,
             albumId: albums.map((album) => {
                 if(album.userId === sessionUser.id) {
-                    return album
+                    return album.id
                 }
                 return []
             })
@@ -48,12 +49,13 @@ function PhotoForm() {
 
     const updateFile = (e) => {
     const file = e.target.files[0];
-    if (file) setImage(file);
+    // console.log(file)
+    if (file) setUrl(file);
     };
 
 return (
-    <div>
-        <div>
+    <div className='photo-form-outer'>
+        <div className='photo-form-structure'>
             <form onSubmit={handleSubmit}>
                 <ul>
                 {errors.map((error, idx) => <li key={idx}>{error}</li>)}

@@ -45,14 +45,14 @@ export const getPhotos = () => async (dispatch) => {
     }
 }
 
-export const createPhoto = ({ title, description, url, userId, albumId }) => async (dispatch) => {
-    const photo = {
+export const createPhoto = (photo) => async (dispatch) => {
+    const {
         title, 
         description,
         url,
         userId,
         albumId
-    }
+    } = photo
     const formData = new FormData();
     formData.append("title", title);
     formData.append("description", description);
@@ -61,7 +61,7 @@ export const createPhoto = ({ title, description, url, userId, albumId }) => asy
 
     if (url) formData.append("image", url);
 
-    const res = await csrfFetch('/api/album', {
+    const res = await csrfFetch('/api/photo', {
         method: `POST`,
         headers: {'Content-Type': "multipart/form-data"},
         body: formData,
