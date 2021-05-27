@@ -15,13 +15,13 @@ function SeparateAlbum({ album }) {
 
     const myImage = () => {
         const albumPhotos = photos.filter((photo) => photo?.albumId === album.id)
-                if(albumPhotos) {
-                    return (
-                        <div>
-                        <img src={albumPhotos[0]?.url} alt='user-post' />
-                        </div>
-                    )
-                }
+            if(albumPhotos) {
+                return (
+                    <div>
+                    <img src={albumPhotos[0]?.url} alt='user-post' className='album-thumbnail'/>
+                    </div>
+                )
+            }
     }
 
 
@@ -34,13 +34,18 @@ function SeparateAlbum({ album }) {
     const handleRoute = () => {
         history.push(`/api/photo/create/${album.id}`)
     }
+
+    const albumRoute = () => {
+        history.push(`/content/${album.id}`)
+    }
     return (
         <div>
                     <li key={album.id} album={album} className='albums-list'>
                         <h2>{album.title}</h2>
+                        <button onClick={() => setActive(true)} className='edit-album-button'>Edit</button>
                         <p>{album.description}</p>
-                        {myImage}
-                        <button onClick={() => setActive(true)} className='edit-album-button'>Edit Album</button>
+                        <div className='hold-thumbnail'>{myImage()}</div>
+                        <button onClick={albumRoute} className='specific-album-button'>{album.title}</button>
                         <button onClick={handleRoute} className='add-photo-button'>Add Photo</button>
                         {active && (
                             <Modal onClose={() => setActive(false)}>

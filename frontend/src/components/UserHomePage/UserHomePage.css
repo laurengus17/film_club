@@ -53,14 +53,25 @@ body {
 }
 
 .edit-album-button,
-.add-photo-button {
+.add-photo-button,
+.specific-album-button {
     background-color: #2B7A78;
     color: #FEFFFF;
     margin: 2px;
 }
 
 .edit-album-button:hover,
-.add-photo-button:hover {
+.add-photo-button:hover,
+.specific-album-button:hover {
     background-color: #DEF2F1;
     color: #2B7A78;
+}
+
+.hold-thumbnail {
+    margin: 5px;
+}
+
+.album-thumbnail {
+    height: 100px;
+    width: 100px;
 }

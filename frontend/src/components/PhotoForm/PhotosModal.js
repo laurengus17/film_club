@@ -8,7 +8,7 @@ function EditPhotoModal() {
     const photoState = useSelector(state => state.photos);
     const sessionUser = useSelector(state => state.session.user);
     const photos = Object.values(photoState);
-    console.log(photos)
+
     const currentUserId = sessionUser.id  
     
     useEffect(() => {

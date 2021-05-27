@@ -7,6 +7,8 @@ import Navigation from "./components/Navigation";
 import AlbumForm from './components/AlbumFormPage/AlbumForm';
 import UserHomePage from './components/UserHomePage'
 import CreatePhotoForm from './components/PhotoForm/CreatePhotoForm';
+import UserAlbumContent from './components/UserAlbums/UserAlbumContent'
+import PhotoPage from './components/PhotoForm/PhotoPage'
 
 function App() {
   const dispatch = useDispatch();
@@ -34,6 +36,14 @@ function App() {
 
         <Route path='/api/photo/create/:albumId'>
           <CreatePhotoForm />
+        </Route>
+
+        <Route path='/content/:albumId'>
+          <UserAlbumContent />
+        </Route>
+
+        <Route path='/display/:photoId'>
+          <PhotoPage />
         </Route>
 
       </Switch>
