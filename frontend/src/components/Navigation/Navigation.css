@@ -25,6 +25,7 @@ nav {
     margin: 5px;
     display: block;
     transition-duration: 0.5s;
+    text-align: center;
 }
 
 .bar:hover {

@@ -8,3 +8,24 @@
 li {
     list-style: none;
 }
+
+.welcome,
+.meet-users {
+    text-align: center;
+}
+
+.home-outer-div {
+    display: block;
+    position: relative;
+    width: 400px;
+}
+
+.user-profiles-div {
+    display: inline-block;
+    position: relative;
+    width: 150px;
+    height: 80px;
+    margin: 5px;
+    padding: 20px;
+    text-align: center;
+}

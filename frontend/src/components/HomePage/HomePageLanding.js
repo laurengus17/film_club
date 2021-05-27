@@ -23,13 +23,13 @@ dispatch(getUsers())
 
 return (
     <div>
-    <h2>Welcome to the Club</h2>
-    <h3>Meet Our Users</h3>
-    <div>
+    <h2 className='welcome'>Welcome to the Club</h2>
+    <h3 className='meet-users'>Meet Our Users</h3>
+    <div className='home-outer-div'>
         {users.map((user) => {
         if(user) {
             return (
-                <div>
+                <div className='user-profiles-div'>
                     <li key={user.id}>
                     <h2>{user.username}</h2>
                     <img src={user.profileImageUrl} alt='profile' className='profile-image' />
