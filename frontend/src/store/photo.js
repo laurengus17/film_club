@@ -73,8 +73,9 @@ export const createPhoto = (photo) => async (dispatch) => {
     }
 }
 
-export const updatePhoto = ({ title, description, url, userId, albumId }, id) => async (dispatch) => {
-    const photo = { id, title, description, url, userId, albumId }
+export const updatePhoto = ({ id, title, description }) => async (dispatch) => {
+    const photo = { id, title, description }
+    console.log(photo, 'HERE IS THE PHTOTPTPTT')
     const res = await csrfFetch(`/api/photo/${id}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
@@ -84,6 +85,7 @@ export const updatePhoto = ({ title, description, url, userId, albumId }, id) =>
     if(res.ok) {
         const data = await res.json();
         dispatch(editPhoto(data));
+        console.log(data, 'DATA IN THUNK')
         return data;
     }
 }
@@ -120,7 +122,7 @@ const photosReducer = (state = initialState, action) => {
         {
             return {
                 ...state,
-                [action.payload.id]: action.payload
+                [action.photo.id]: action.photo
             };
         }
         case REMOVE_PHOTO:

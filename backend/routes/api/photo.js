@@ -44,7 +44,7 @@ router.put('/:id', asyncHandler(async (req, res) => {
     const { id } = req.params;
     const photo = req.body.photo;
     const currentPhoto = await Photo.findByPk(id);
-    const newPhoto = await currentPhoto.update({title: photo.title, description: photo.description, url: photo.url});
+    const newPhoto = await currentPhoto.update({title: photo.title, description: photo.description, url: photo.url, userId: photo.userId, albumId: photo.albumId});
     return res.json({
         newPhoto,
     });

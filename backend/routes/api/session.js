@@ -19,6 +19,12 @@ const validateLogin = [
     handleValidationErrors,
 ];
 
+
+router.get('/', asyncHandler(async (req, res) => {
+    const users = await User.findAll()
+    res.json(users);
+}))
+
 // Log in
 router.post(
     '/',

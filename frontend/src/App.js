@@ -9,6 +9,8 @@ import UserHomePage from './components/UserHomePage'
 import CreatePhotoForm from './components/PhotoForm/CreatePhotoForm';
 import UserAlbumContent from './components/UserAlbums/UserAlbumContent'
 import PhotoPage from './components/PhotoForm/PhotoPage'
+import HomePageLanding from './components/HomePage/HomePageLanding'
+
 
 function App() {
   const dispatch = useDispatch();
@@ -22,6 +24,10 @@ function App() {
     <Navigation isLoaded={isLoaded} />
     {isLoaded && (
       <Switch>
+        <Route exact path="/">
+          <HomePageLanding />
+        </Route>
+
         <Route path="/signup">
           <SignupFormPage />
         </Route>
