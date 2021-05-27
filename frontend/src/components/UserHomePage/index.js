@@ -10,12 +10,14 @@ const albumState = useSelector(state => state.albums);
 const photoState = useSelector(state => state.photos);
 const sessionUser = useSelector(state => state.session.user);
 const albums = Object.values(albumState);
-// const photos = Object.values(photoState);
+const photos = Object.values(photoState);
 const currentUserId = sessionUser.id
+
+// const firstPhoto = photos[0]
+// const firstPhotoUrl = firstPhoto?.url
 
 // const userPhotos = photos.filter((photo) => photo.userId === currentUserId)
 // console.log(userPhotos)
-
 useEffect(() => {
     dispatch(getAlbums())
     dispatch(getPhotos())
@@ -27,7 +29,7 @@ return ( <> { photoState &&
     {albums.map((album) => {
         if (album.userId === currentUserId) {
             return (
-                <SeparateAlbum album={album}/>
+                <SeparateAlbum album={album} />
             )
         }
         return [];

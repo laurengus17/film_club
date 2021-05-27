@@ -37,10 +37,9 @@ const removePhoto = (id) => {
 
 export const getPhotos = () => async (dispatch) => {
     const res = await csrfFetch('/api/photo');
-
     if(res.ok) {
         const photos = await res.json();
-        dispatch(loadPhotos(photos));
+        dispatch(loadPhotos(photos.photos));
         return res;
     }
 }
@@ -110,10 +109,7 @@ const photosReducer = (state = initialState, action) => {
             action.photos.forEach((photo) => {
                 allPhotos[photo.id] = photo;
             });
-            return {
-                ...allPhotos,
-                ...state
-            };
+            return allPhotos
         case ADD_PHOTO:
         {
         newState = Object.assign({}, state);
