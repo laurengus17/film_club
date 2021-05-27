@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
+import { Modal } from '../../context/Modal';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams, useHistory } from 'react-router-dom';
 import { getAlbums } from '../../store/album';
 import { getPhotos, deletePhoto } from '../../store/photo';
+import UpdatePhotoForm from './UpdatePhotoForm';
 import './PhotoDisplay.css';
 
 function PhotoPage() {
@@ -11,6 +13,8 @@ const history = useHistory();
 const { photoId } = useParams();
 const photoState = useSelector(state => state.photos);
 const photos = Object.values(photoState);
+
+const [active, setActive] = useState(false);
 
 useEffect(() => {
 dispatch(getAlbums())
@@ -35,11 +39,16 @@ const myPhoto = () => {
             </div>
                 <p>{pagePhoto[0].description}</p>
             <div>
-                <button>Edit</button>
+                <button onClick={() => setActive(true)}>Edit</button>
             </div>
             <div>
                 <button onClick={() => handleDelete(pagePhoto[0].id)}>Delete</button>
             </div>
+            {active && (
+            <Modal onClose={() => setActive(false)}>
+                <UpdatePhotoForm photo={pagePhoto[0]}/>
+            </Modal>
+            )}
             </div>
         )
     }

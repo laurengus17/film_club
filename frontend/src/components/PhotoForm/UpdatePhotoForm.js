@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import { getPhotos, updatePhoto, deletePhoto } from '../../store/photo';
+import { getPhotos, updatePhoto} from '../../store/photo';
 import { useDispatch, useSelector } from 'react-redux';
-import { useHistory, useParams } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import './PhotoForm.css';
 
 function UpdatePhotoForm ({ photo }) {
     const dispatch = useDispatch();
     const history = useHistory();
-    const sessionUser = useSelector(state => state.session.user);
     const photoState = useSelector(state => state.photos);
     const photos = Object.values(photoState);
 
@@ -27,12 +26,8 @@ function UpdatePhotoForm ({ photo }) {
 
         let updatedPhoto = await dispatch(updatePhoto(payload, id))
         if (updatedPhoto) {
-            history.push(`/users`);
+            history.push(`/display/${photo.id}`);
         }
-    }
-
-    const handleDelete = async (id) => {
-    dispatch(deletePhoto(id));
     }
 
     return (
@@ -60,10 +55,7 @@ function UpdatePhotoForm ({ photo }) {
             </form>
         </div>
         <div>
-            <button type='submit' className='update-button'>Update Album</button>
-        </div>
-        <div>
-        <button className='delete-submit' onClick={() => handleDelete(photos.id)}>Delete</button>
+            <button type='submit' className='update-button'>Update Photo</button>
         </div>
     </div>
     )

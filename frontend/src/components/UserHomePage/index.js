@@ -13,11 +13,6 @@ const albums = Object.values(albumState);
 const photos = Object.values(photoState);
 const currentUserId = sessionUser.id
 
-// const firstPhoto = photos[0]
-// const firstPhotoUrl = firstPhoto?.url
-
-// const userPhotos = photos.filter((photo) => photo.userId === currentUserId)
-// console.log(userPhotos)
 useEffect(() => {
     dispatch(getAlbums())
     dispatch(getPhotos())
