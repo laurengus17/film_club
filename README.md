@@ -1,4 +1,4 @@
-# Welcome to the Film CLub App
+# Welcome to the Film Club App
 
 [film-club-app](https://film-club-app.herokuapp.com/)
 
