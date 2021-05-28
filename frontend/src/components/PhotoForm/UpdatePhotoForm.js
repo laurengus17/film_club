@@ -19,7 +19,7 @@ useEffect(() => {
 
 const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('AFTER PREVENT DEFAULT')
+
     const payload = {
         ...photos,
         id: photo.id,
@@ -35,8 +35,8 @@ const handleSubmit = async (e) => {
 }
 
 return (
-    <div>
-    <div> 
+    <div className='form-outer-div'>
+    <div className='form-body'> 
         <form onSubmit={handleSubmit} className='edit-form'>
             <div className='edit-div'>
             <input 

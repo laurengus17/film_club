@@ -37,14 +37,16 @@ return (
         </div>
     </button>
     {showMenu && (
+        <div className='dropdown-div'>
         <ul className="profile-dropdown">
         <img alt='profile' className='profile-photo' src={user.profileImageUrl} />
-        <li>Hello, {user.username}</li>
-        <li>{user.email}</li>
+        <li className='list-dropdown'>Hey, {user.username}</li>
+        <li className='list-dropdown'>{user.email}</li>
         <li>
             <button className='user-logout-button' onClick={logout}>Log Out</button>
         </li>
         </ul>
+        </div>
     )}
     </>
 );

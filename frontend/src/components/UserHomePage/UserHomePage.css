@@ -5,7 +5,6 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: Arial, Helvetica, sans-serif;
 }
 
 .edit-div {
@@ -58,6 +57,9 @@ body {
     background-color: #2B7A78;
     color: #FEFFFF;
     margin: 2px;
+    border-radius: 5px;
+    text-transform: uppercase;
+    font-family: Montserrat, sans-serif;
 }
 
 .edit-album-button:hover,
@@ -77,15 +79,70 @@ body {
 }
 
 .create-an-album {
-    background: #2B7A78;
+    background-color: #3AAFA9;
     color: #DEF2F1;
     border: 2px solid #17252A;
     height: 30px;
     text-transform: uppercase;
     box-shadow: 1px 1px 1px #2B7A78;
+    font-family: Montserrat, sans-serif;
+    font-size: 15px;
+    text-shadow: 1px 1px 1px #17252A;
+    margin: 10px;
+    border-radius: 5px;
 }
 
 .create-an-album:hover {
     background-color: #17252A;
     color: #3AAFA9;
+    text-shadow: 1px 0px 0px #3AAFA9;
+}
+
+.space {
+    margin: 5px;
+}
+
+.profile-welcome {
+    font-family: Montserrat, sans-serif;
+    margin: 15px;
+    color: #DEF2F1;
+    text-shadow: 2px 2px 2px #17252A;
+}
+
+.oh-hey-there {
+    display: block;
+    position: relative;
+    width: 550px;
+    border-radius: 15px;
+    background-color: #2B7A78;
+    box-shadow: 5px 10px;
+    overflow: hidden;
+}
+
+.albums-list-outer {
+    display: inline-block;
+    position: relative;
+    width: 400px;
+    height: 100px;
+    margin: 10px;
+    padding: 25px;
+    text-align: center;
+}
+
+.album-specific-div {
+    background-color: #DEF2F1;
+    width: 250px;
+    border-radius: 15px;
+    box-shadow: 5px 10px;
+    margin: 15px;
+}
+
+.user-album-title,
+.user-album-description {
+    font-family: Montserrat, sans-serif;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: #3AAFA9;
+    text-shadow: 1px 1px 1px #17252A;
+    margin: 5px;
 }

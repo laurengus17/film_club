@@ -9,7 +9,9 @@ function AlbumForm() {
     const history = useHistory();
     // const albums = useSelector(state => Object.values(state.albums));
     const sessionUser = useSelector(state => state.session.user);
-    
+    const albumState = useSelector(state => state.albums);
+    const albums = Object.values(albumState);
+
     const [title, setTitle] = useState('');
     const [description, setDescription] = useState('');
     // const [] = useState();

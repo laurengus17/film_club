@@ -33,6 +33,7 @@ function UserHomePage ({album}) {
         }
     }
 
+
     const handleDelete = async (id) => {
         dispatch(deleteAlbum(id));
     }
@@ -59,13 +60,13 @@ function UserHomePage ({album}) {
                 required>
                 </input>
                 </div>
+                <div>
+                <button type='submit' className='update-button'>Update Album</button>
+                </div>
+                <div>
+                <button className='delete-submit' onClick={() => handleDelete(albums.id)}>Delete</button>
+                </div>
             </form>
-        </div>
-        <div>
-            <button type='submit' className='update-button'>Update Album</button>
-        </div>
-        <div>
-        <button className='delete-submit' onClick={() => handleDelete(albums.id)}>Delete</button>
         </div>
     </div>
     )

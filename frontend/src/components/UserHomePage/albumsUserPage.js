@@ -39,14 +39,16 @@ function SeparateAlbum({ album }) {
         history.push(`/content/${album.id}`)
     }
     return (
-        <div>
+        <div className='albums-list-outer'>
                     <li key={album.id} album={album} className='albums-list'>
-                        <h2>{album.title}</h2>
+                        <div className='album-specific-div'>
+                        <h2 className='user-album-title'>{album.title}</h2>
+                        <p className='user-album-description'>{album.description}</p>
                         <button onClick={() => setActive(true)} className='edit-album-button'>Edit</button>
-                        <p>{album.description}</p>
                         <div className='hold-thumbnail'>{myImage()}</div>
                         <button onClick={albumRoute} className='specific-album-button'>{album.title}</button>
                         <button onClick={handleRoute} className='add-photo-button'>Add Photo</button>
+                        </div>
                         {active && (
                             <Modal onClose={() => setActive(false)}>
                                 <UserHomePage album={album}/>

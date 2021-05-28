@@ -75,7 +75,6 @@ export const createPhoto = (photo) => async (dispatch) => {
 
 export const updatePhoto = ({ id, title, description }) => async (dispatch) => {
     const photo = { id, title, description }
-    console.log(photo, 'HERE IS THE PHTOTPTPTT')
     const res = await csrfFetch(`/api/photo/${id}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },

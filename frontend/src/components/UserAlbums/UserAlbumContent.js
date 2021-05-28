@@ -29,7 +29,7 @@ function UserAlbumContent() {
                             return (
                                 <div className='image-div'>
                                 <img src={photo?.url} alt='user-posts' className='album-content'/>
-                                <button onClick={() => history.push(`/display/${photo?.id}`)}>{photo?.title}</button>
+                                <button className='specific-photo-button' onClick={() => history.push(`/display/${photo?.id}`)}>{photo?.title}</button>
                                 </div>
                             )
                         })}
@@ -44,13 +44,13 @@ function UserAlbumContent() {
     }
 
     return (
-        <div>
-            <h2>My Album</h2>
-            <div>
-                {myAlbum()}
-            </div>
-            <div>
+        <div className='album-outer-div'>
+            <h2 className='album-page'>My Album</h2>
+            <div className='add-photo'>
                 <button onClick={handleRoute} className='add-photo-button'>Add Photo</button>
+            </div>
+            <div className='specific-photo-div'>
+                {myAlbum()}
             </div>
         </div>
     )

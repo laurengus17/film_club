@@ -4,16 +4,17 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: Arial, Helvetica, sans-serif;
 }
 
 .outer-div {
-    background-color: #2B7A78;
-	border-radius: 15px;
-    height: 400px;
-    width: 500px;
-	position: relative;
 	overflow: hidden;
+    display: block;
+    position: relative;
+    width: 400px;
+    height: 400px;
+    border-radius: 15px;
+    background-color: #2B7A78;
+    box-shadow: 5px 10px;
 }
 
 .form-div {
@@ -30,6 +31,7 @@ body {
     font-size: 1.7em;
     text-align: center;
     text-transform: uppercase;
+    font-family: Montserrat, sans-serif;
 }
 
 .form-body {
@@ -52,6 +54,7 @@ body {
     border-bottom: 1px solid #FEFFFF;
     width: 100%;
     font-size: 12px;
+    font-family: Source Sans Pro, sans-serif;
 }
 
 .submit-button {
@@ -64,6 +67,7 @@ body {
     padding: 15px 45px;
     width: 100%;
     font-size: 13px;
+    font-family: Montserrat, sans-serif;
     font-weight: bold;
     cursor: pointer;
     opacity: 1;

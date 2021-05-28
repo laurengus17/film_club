@@ -8,6 +8,8 @@ nav {
     background: #DEF2F1;
     padding: 10px;
     border: 1px solid #2B7A78;
+    position: relative;
+    border-radius: 10px;
 }
 
 .navigation {
@@ -27,6 +29,7 @@ nav {
     display: block;
     transition-duration: 0.5s;
     text-align: center;
+    font-family: Montserrat, sans-serif;
 }
 
 .bar:hover {
@@ -67,28 +70,44 @@ nav {
     margin: 0 10px;
     background: #3AAFA9;
     border: 2px solid #17252A;
+    box-shadow: 2px 2px 2px #2B7A78;
+    border-radius: 5px;
 }
 
 .profile-button:hover {
     background: #2B7A78;
 }
 
+.dropdown-div {
+    text-align: center;
+}
+
 .profile-dropdown {
     margin: 5px;
     height: 250px;
     width: 200px;
-    border: 1px #000;
     background-color: #3AAFA9;
+    text-align: center;
+    box-shadow: 1px 1px 1px #2B7A78;
+    border: 2px solid #2B7A78;
+    border-radius: 5px;
 }
 
 .profile-dropdown li {
     padding: 5px; 
     margin: 5px;
     list-style: none;
+    text-align: center;
+}
+
+.list-dropdown {
+    font-family: Montserrat, sans-serif;
+    color: #17252A;
+    font-weight: 600;
 }
 
 .user-logout-button {
-    background: #17252A;
+    background: #2B7A78;
     color: #DEF2F1;
     border: 2px solid #17252A;
     height: 30px;
@@ -96,6 +115,6 @@ nav {
 }
 
 .user-logout-button:hover {
-    background: #2B7A78;
+    background: #17252A;
     color: #DEF2F1;
 }
