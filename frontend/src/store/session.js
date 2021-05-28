@@ -52,7 +52,9 @@ export const login = (user) => async (dispatch) => {
 export const restoreUser = () => async dispatch => {
     const response = await csrfFetch('/api/session');
     const data = await response.json();
-    dispatch(setUser(data.user));
+    if(data.user) {
+        dispatch(setUser(data.user));
+    }
     return response;
 };
 
@@ -108,7 +110,7 @@ export const logout = () => async (dispatch) => {
     return response;
 };
 
-const initialState = { user: null };
+const initialState = { user: null, list: [] };
 
 const sessionReducer = (state = initialState, action) => {
     let newState;
@@ -118,9 +120,11 @@ const sessionReducer = (state = initialState, action) => {
         action.users.forEach((user) => {
             allUsers[user.id] = user;
         });
+        const list = action.users.map((user) => user.id)
         return {
             ...allUsers,
-            ...state
+            ...state,
+            list
         };
         case SET_USER: {
         newState = Object.assign({}, state);

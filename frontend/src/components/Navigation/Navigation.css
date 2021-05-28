@@ -6,7 +6,8 @@
 nav {
     margin: 25px;
     background: #DEF2F1;
-    padding: 15px;
+    padding: 10px;
+    border: 1px solid #2B7A78;
 }
 
 .navigation {
@@ -35,7 +36,8 @@ nav {
 .home,
 .signup,
 .login,
-.create-album {
+.create-album,
+.user-page {
     text-decoration: none;
     color: #17252A;
     font-size: 24px;
@@ -43,12 +45,15 @@ nav {
     transition: all 0.5s ease-in-out;
     position: relative;
     text-transform: uppercase;
+    font-family: Montserrat, sans-serif;
+    text-shadow: 2px 2px 5px #2B7A78;
 }
 
 .home:hover,
 .signup:hover,
 .login:hover,
-.create-album:hover {
+.create-album:hover,
+.user-page:hover {
     color: #2B7A78;
 }
 

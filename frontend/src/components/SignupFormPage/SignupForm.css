@@ -4,7 +4,6 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: Arial, Helvetica, sans-serif;
 }
 
 .signup-outer {
@@ -30,6 +29,8 @@ body {
     font-size: 1.7em;
     text-align: center;
     text-transform: uppercase;
+    font-family: Montserrat, sans-serif;
+    font-weight: 800;
 }
 
 .signup-body {
@@ -39,6 +40,7 @@ body {
     margin-top: 50px;
     opacity: 1;
     visibility: visible;
+    font-family: Source Sans Pro, sans-serif;
 }
 
 .input {
@@ -68,6 +70,7 @@ body {
     cursor: pointer;
     opacity: 1;
     visibility: visible;
+    font-family: Montserrat, sans-serif;
 }
 
 

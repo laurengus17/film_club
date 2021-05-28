@@ -75,3 +75,17 @@ body {
     height: 100px;
     width: 100px;
 }
+
+.create-an-album {
+    background: #2B7A78;
+    color: #DEF2F1;
+    border: 2px solid #17252A;
+    height: 30px;
+    text-transform: uppercase;
+    box-shadow: 1px 1px 1px #2B7A78;
+}
+
+.create-an-album:hover {
+    background-color: #17252A;
+    color: #3AAFA9;
+}

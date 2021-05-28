@@ -12,7 +12,7 @@ const [username, setUsername] = useState("");
 const [password, setPassword] = useState("");
 const [confirmPassword, setConfirmPassword] = useState("");
 const [image, setImage] = useState(null);
-  // for multuple file upload
+  // for multiple file upload
   //   const [images, setImages] = useState([]);
 const [errors, setErrors] = useState([]);
 

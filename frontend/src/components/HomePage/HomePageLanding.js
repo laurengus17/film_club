@@ -8,8 +8,8 @@ import './HomePageLanding.css';
 
 function HomePageLanding() {
 const dispatch = useDispatch();
-const userState = useSelector(state => state.session);
-const users = Object.values(userState);
+const users = useSelector(state => state.session.list.map((id) => state.session[id]));
+// const users = Object.values(userState);
 const photoState = useSelector(state => state.photos);
 const photos = Object.values(photoState);
 const albumState = useSelector(state => state.albums);
@@ -31,7 +31,7 @@ return (
             return (
                 <div className='user-profiles-div'>
                     <li key={user.id}>
-                    <h2>{user.username}</h2>
+                    <h2 className='user-usernames'>{user.username}</h2>
                     <img src={user.profileImageUrl} alt='profile' className='profile-image' />
                     </li>
                 </div>

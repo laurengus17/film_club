@@ -21,6 +21,10 @@ useEffect(() => {
 return ( <> { photoState &&
     <>
     <div>
+        <h2>Oh hey there, {sessionUser.username}</h2>
+    <div>
+        <button className='create-an-album'>Create An Album</button>
+    </div>
     {albums.map((album) => {
         if (album.userId === currentUserId) {
             return (
