@@ -1,6 +1,6 @@
 # Welcome to the Film Club App
 
-[film-club-app](https://film-club-app.herokuapp.com/) 'Heroku link not updated'
+[film-club-app](https://film-club-app.herokuapp.com/) 
 
 [Database Schema](https://github.com/laurengus17/film_club/wiki/Database-Schema)
 
