@@ -1,12 +1,15 @@
-# Welcome to the Film Club App
+## Welcome to the Film Club App
 
-[film-club-app](https://film-club-app.herokuapp.com/) 'Heroku link not updated'
+// Film Club is //
 
-[Database Schema](https://github.com/laurengus17/film_club/wiki/Database-Schema)
+## Live Site
 
-MVPS:
+[film-club-app](https://film-club-app.herokuapp.com/)
 
-Users (CRUD),
-Albums (CRUD),
-Photos (CRUD),
-Comments (CRUD)
+// Insert Screenshots of Site //
+
+## Technologies Used
+
+## Documentation
+
+[Film Club Wiki](https://github.com/laurengus17/film_club/wiki)
