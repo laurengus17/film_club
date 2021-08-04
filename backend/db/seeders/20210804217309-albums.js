@@ -94,7 +94,11 @@ module.exports = {
   down: (queryInterface, Sequelize) => {
     const Op = Sequelize.Op;
     return queryInterface.bulkDelete('Albums', {
-      username: { [Op.in]: [] }
+      title: { [Op.in]: ['Waves on Waves', 
+      'Hanging With My Friends', 'Playing With New Camera', 'Family Vacation',
+      'Neighborhood Strolls', 'All My Favorite Things', 'Lots Of Light', 'Travels',
+      'Black And White', 'Landscapes', 'The Great Outdoors', 'Around Town', 'Signs',
+      'Nothin Else To Do', 'Long Drives', 'New Camera', 'Unedited Mix'] }
     }, {});
   }
 };
