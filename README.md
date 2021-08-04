@@ -9,6 +9,19 @@
 // Insert Screenshots of Site //
 
 ## Technologies Used
+* PostgreSQL
+* Express.js
+* Sequelize
+* CSS
+* JavaScript
+* Bcryptjs
+* Express-session
+* Express-validator
+* Node.js
+* AWS S3
+* Heroku
+* React
+* Redux
 
 ## Documentation
 
