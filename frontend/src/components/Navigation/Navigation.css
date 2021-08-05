@@ -3,18 +3,39 @@
     text-align: center;
 }
 
-nav {
-    margin: 25px;
-    background: #DEF2F1;
+.navbar_container {
+    margin-top: 20px;
+    justify-content: center;
+    background-color: #DEF2F1;
     padding: 10px;
     border: 1px solid #2B7A78;
-    position: relative;
     border-radius: 10px;
 }
 
 .navigation {
+    top: 7px;
     list-style: none;
     display: flex;
+    justify-content: center;
+    background-color: #DEF2F1;
+    margin: auto;
+}
+
+.home_button,
+.album_button {
+    background: #3AAFA9;
+    color: #FEFFFF;
+    border: 2px solid #17252A;
+    height: 30px;
+    text-transform: uppercase;
+    margin-left: 5px;
+    margin-bottom: 10px;
+}
+
+.home_button:hover,
+.album_button:hover {
+    background-color: #2B7A78;
+    color: #DEF2F1;
 }
 
 .profile-photo {
@@ -36,9 +57,6 @@ nav {
     cursor: pointer;
 }
 
-.home,
-.signup,
-.login,
 .create-album,
 .user-page {
     text-decoration: none;
@@ -52,9 +70,6 @@ nav {
     text-shadow: 2px 2px 5px #2B7A78;
 }
 
-.home:hover,
-.signup:hover,
-.login:hover,
 .create-album:hover,
 .user-page:hover {
     color: #2B7A78;

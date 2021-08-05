@@ -1,22 +1,32 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useHistory } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import ProfileButton from './ProfileButton';
 import LoginFormModal from '../LoginFormModal';
+import SignUpFormModal from '../SignupFormPage';
 import './Navigation.css';
 
 function Navigation({ isLoaded }){
 const sessionUser = useSelector(state => state.session.user);
+const history = useHistory();
+
+const handleHome = () => {
+history.push('/')
+}
+
+const handleAlbums = () => {
+history.push('/users')
+}
 
 let sessionLinks;
 if (sessionUser) {
     sessionLinks = (
     <>
     <div className='bar'>
-    <NavLink className='user-page' to='/users'>Profile</NavLink>
+        <button className='album_button' onClick={handleAlbums}>{sessionUser.username}'s Albums</button>
     </div>
     <div className='bar'>
-    <ProfileButton user={sessionUser} />
+        <ProfileButton user={sessionUser} />
     </div>
     </>
     );
@@ -24,7 +34,7 @@ if (sessionUser) {
     sessionLinks = (
     <>
         <div className='bar'>
-        <NavLink className='signup' to="/signup">Sign Up</NavLink>
+        <SignUpFormModal className='signup'/>
         </div>
         <div className='bar'>
         <LoginFormModal className='login' />
@@ -35,10 +45,10 @@ if (sessionUser) {
 
 return (
 <div className='outer-navigation'>
-    <nav>
+    <nav className='navbar_container'>
         <ul className='navigation'>
             <div className='bar'>
-                <NavLink className='home' exact to="/">Home</NavLink>
+                <button className='home_button' onClick={handleHome}>Home</button>
             </div>
                 {isLoaded && sessionLinks}
         </ul>
