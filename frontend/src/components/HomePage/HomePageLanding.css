@@ -19,23 +19,29 @@ li {
 }
 
 .home-outer-div {
-    display: block;
-    position: relative;
-    width: 400px;
+    display: grid;
+    left: 50%;
+    width: 100%;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    row-gap: 45px;
+    align-self: center;
     border-radius: 15px;
     background-color: #2B7A78;
     box-shadow: 5px 10px;
 }
 
 .user-profiles-div {
-    display: inline-block;
-    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     width: 150px;
     height: 80px;
-    margin: 5px;
-    padding: 20px;
+    margin-top: 30px;
+    padding: 10px;
     text-align: center;
 }
+
 
 .user-usernames {
     font-family: Source Sans Pro, sans-serif;

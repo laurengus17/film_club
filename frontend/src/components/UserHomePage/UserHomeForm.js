@@ -1,19 +1,19 @@
 import React, { useEffect, useState } from 'react';
 import { getAlbums, updateAlbum, deleteAlbum } from '../../store/album';
 import { useDispatch, useSelector } from 'react-redux';
-import { useHistory } from 'react-router-dom';
+import { useHistory, useParams } from 'react-router-dom';
 import './UserHomePage.css';
 
-function UserHomePage ({album}) {
+function UserHomePage ({ album }) {
     const dispatch = useDispatch();
     const history = useHistory();
+    const { userId }  = useParams();
     const sessionUser = useSelector(state => state.session.user);
     const albumState = useSelector(state => state.albums);
     const albums = Object.values(albumState);
 
     const [title, setTitle] = useState('');
     const [description, setDescription] = useState('');
-
 
     useEffect(() => {
         dispatch(getAlbums())
@@ -29,7 +29,7 @@ function UserHomePage ({album}) {
 
         let updatedAlbum = await dispatch(updateAlbum(payload, id))
         if (updatedAlbum) {
-            history.push(`/users`);
+            history.push(`/users/${userId}`);
         }
     }
 

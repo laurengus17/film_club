@@ -5,11 +5,13 @@
 
 .navbar_container {
     margin-top: 20px;
+    margin-right: 50%;
     justify-content: center;
     background-color: #DEF2F1;
     padding: 10px;
     border: 1px solid #2B7A78;
     border-radius: 10px;
+    width: 500px;
 }
 
 .navigation {
@@ -22,7 +24,9 @@
 }
 
 .home_button,
-.album_button {
+.album_button,
+.demo_user,
+.profile-button {
     background: #3AAFA9;
     color: #FEFFFF;
     border: 2px solid #17252A;
@@ -33,7 +37,9 @@
 }
 
 .home_button:hover,
-.album_button:hover {
+.album_button:hover,
+.demo_user:hover,
+.profile-button:hover {
     background-color: #2B7A78;
     color: #DEF2F1;
 }
@@ -41,7 +47,7 @@
 .profile-photo {
     height: 60px;
     width: 60px;
-    margin: 10px;
+    margin: 20px;
     border-radius: 50%;
 }
 
@@ -80,29 +86,21 @@
     color: #DEF2F1;
 }
 
-.profile-button {
-    padding: 5px;
-    margin: 0 10px;
-    background: #3AAFA9;
-    border: 2px solid #17252A;
-    box-shadow: 2px 2px 2px #2B7A78;
-    border-radius: 5px;
-}
-
-.profile-button:hover {
-    background: #2B7A78;
-}
 
 .dropdown-div {
     text-align: center;
 }
 
 .profile-dropdown {
-    margin: 5px;
+    margin: 0px;
+    padding: 0px;
+    position: absolute;
+    justify-content: center;
+    background-color: #DEF2F1;;
+    display: flex;
+    flex-direction: column;
     height: 250px;
     width: 200px;
-    background-color: #3AAFA9;
-    text-align: center;
     box-shadow: 1px 1px 1px #2B7A78;
     border: 2px solid #2B7A78;
     border-radius: 5px;

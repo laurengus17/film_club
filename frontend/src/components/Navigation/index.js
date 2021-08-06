@@ -1,21 +1,28 @@
 import React from 'react';
-import { NavLink, useHistory } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { useHistory } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
 import ProfileButton from './ProfileButton';
 import LoginFormModal from '../LoginFormModal';
 import SignUpFormModal from '../SignupFormPage';
+import { loginDemo } from '../../store/session';
 import './Navigation.css';
 
 function Navigation({ isLoaded }){
 const sessionUser = useSelector(state => state.session.user);
 const history = useHistory();
+const dispatch = useDispatch();
 
 const handleHome = () => {
 history.push('/')
 }
 
 const handleAlbums = () => {
-history.push('/users')
+history.push(`/users/${sessionUser.id}`)
+}
+
+
+const demoLogin = () => {
+    dispatch(loginDemo('Demo-McDemo', 'password'))
 }
 
 let sessionLinks;
@@ -38,6 +45,9 @@ if (sessionUser) {
         </div>
         <div className='bar'>
         <LoginFormModal className='login' />
+        </div>
+        <div>
+            <button className='demo_user' onClick={demoLogin}>Demo User</button>
         </div>
     </>
     );
