@@ -1,3 +1,18 @@
+.nav-signup {
+    background: #3AAFA9;
+    color: #FEFFFF;
+    border: 2px solid #17252A;
+    height: 30px;
+    text-transform: uppercase;
+    margin-left: 5px;
+    margin-bottom: 10px;
+}
+
+.nav-signup:hover {
+    background-color: #2B7A78;
+    color: #DEF2F1;
+}
+
 body {
     position: relative;
     background-color: #3AAFA9;

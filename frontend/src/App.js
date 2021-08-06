@@ -36,7 +36,7 @@ function App() {
           <AlbumForm />
         </Route>
 
-        <Route path='/users'>
+        <Route path='/users/:userId'>
           <UserHomePage />
         </Route>
 
