@@ -1,7 +1,8 @@
 .nav-signup {
     background: #3AAFA9;
     color: #FEFFFF;
-    border: 2px solid #17252A;
+    border: 2px solid #2B7A78;
+    border-radius: 2px;
     height: 30px;
     text-transform: uppercase;
     margin-left: 5px;
