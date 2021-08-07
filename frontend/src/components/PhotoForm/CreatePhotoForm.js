@@ -1,14 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useHistory, useParams } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import { getAlbums } from '../../store/album';
 import { getPhotos, createPhoto } from '../../store/photo';
 import './PhotoForm.css';
 
-function PhotoForm() {
+function CreatePhotoForm({ albumId }) {
     const dispatch = useDispatch();
     const history = useHistory();
-    const { albumId } = useParams()
     const sessionUser = useSelector(state => state.session.user);
 
     const [url, setUrl] = useState(null);
@@ -86,4 +85,4 @@ return (
 )
 }
 
-export default PhotoForm;
+export default CreatePhotoForm;

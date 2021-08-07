@@ -2,6 +2,7 @@
     height: 60%;
     width: 70%;
     margin: 15px;
+    border-radius: 5px;
 }
 
 .photos-list {
@@ -10,17 +11,19 @@
 
 .album-page {
     font-family: Montserrat, sans-serif;
-    margin: 25px;
     color: #DEF2F1;
     text-shadow: 2px 2px 2px #17252A;
     text-align: center;
 }
 
 .album-outer-div {
-    overflow: hidden;
-    display: block;
-    position: relative;
-    width: 400px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    margin-top: 15px;
+    left: 50%;
+    width: 100%;
+    height: 100%;
     border-radius: 15px;
     background-color: #2B7A78;
     box-shadow: 5px 10px;
@@ -28,6 +31,7 @@
 
 .add-photo {
     margin: 20px;
+    text-align: center;
 }
 
 .image-div {
@@ -36,21 +40,29 @@
     height: 250px;
     border-radius: 15px;
     box-shadow: 5px 10px;
-    margin: 15px;
+    margin-left: 10%;
+    margin-top: 15%;
+    text-align: center;
 }
 
 .add-photo-button,
 .specific-photo-button {
     background-color: #2B7A78;
-    color: #FEFFFF;
+    color: #DEF2F1;
     border-radius: 5px;
     margin: 5px;
+    height: 30px;
     text-transform: uppercase;
-    font-family: Montserrat, sans-serif;
+    font-family: Source Sans Pro, sans-serif;
+    border: 2px solid #2B7A78;
 }
 
-.add-photo-button:hover,
-.specific-photo-button:hover {
+.add-photo-button:hover {
     background-color: #DEF2F1;
     color: #2B7A78;
+}
+
+.specific-photo-button:hover {
+    background-color: #3AAFA9;
+    color: #DEF2F1;
 }

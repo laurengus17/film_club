@@ -5,6 +5,7 @@ import { useHistory } from 'react-router-dom';
 import { getAlbums } from '../../store/album';
 import UserHomePage from './UserHomeForm';
 import { getPhotos } from '../../store/photo';
+import './UserHomePage.css';
 
 function SeparateAlbum({ album }) {
     const dispatch = useDispatch();
@@ -40,21 +41,17 @@ function SeparateAlbum({ album }) {
     }
     return (
         <div className='albums-list-outer'>
-                    <li key={album.id} album={album} className='albums-list'>
-                        <div className='album-specific-div'>
                         <h2 className='user-album-title'>{album.title}</h2>
                         <p className='user-album-description'>{album.description}</p>
                         <button onClick={() => setActive(true)} className='edit-album-button'>Edit</button>
                         <div className='hold-thumbnail'>{myImage()}</div>
                         <button onClick={albumRoute} className='specific-album-button'>{album.title}</button>
-                        <button onClick={handleRoute} className='add-photo-button'>Add Photo</button>
-                        </div>
+                        <button onClick={handleRoute} className='add-photo-button-album'>Add Photo</button>
                         {active && (
                             <Modal onClose={() => setActive(false)}>
                                 <UserHomePage album={album}/>
                             </Modal>
                         )}
-                    </li>
         </div>
     )
 }

@@ -6,7 +6,6 @@ import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
 import AlbumForm from './components/AlbumFormPage/AlbumForm';
 import UserHomePage from './components/UserHomePage'
-import CreatePhotoForm from './components/PhotoForm/CreatePhotoForm';
 import UserAlbumContent from './components/UserAlbums/UserAlbumContent'
 import PhotoPage from './components/PhotoForm/PhotoPage'
 import HomePageLanding from './components/HomePage/HomePageLanding'
@@ -40,9 +39,9 @@ function App() {
           <UserHomePage />
         </Route>
 
-        <Route path='/api/photo/create/:albumId'>
+        {/* <Route path='/api/photo/create/:albumId'>
           <CreatePhotoForm />
-        </Route>
+        </Route> */}
 
         <Route path='/content/:albumId'>
           <UserAlbumContent />
