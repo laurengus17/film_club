@@ -1,3 +1,31 @@
+.edit-album-outer {
+    overflow: hidden;
+    display: block;
+    position: relative;
+    width: 400px;
+    height: 400px;
+    border-radius: 15px;
+    background-color: #2B7A78;
+    box-shadow: 5px 10px;
+}
+
+.edit-album-structure {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 65%;
+    z-index: 5;
+}
+
+.edit-album-title {
+    color: #DEF2F1;
+    font-size: 1.7em;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: Montserrat, sans-serif;
+}
+
 .edit-div {
     border-radius: 15px;
     background-color: #FEFFFF;
@@ -18,13 +46,14 @@
     border-bottom: 1px solid #FEFFFF;
     width: 100%;
     font-size: 12px;
+    font-family: Source Sans Pro, sans-serif;
 }
 
-.edit-submit,
+
 .delete-submit,
 .update-button {
     background-color: rgba(0,0,0,0.4);
-    color: rgba(256,256,256,0.7);
+    color: #DEF2F1;
     border: 0;
     border-radius: 15px;
     display: block;
@@ -36,104 +65,116 @@
     cursor: pointer;
     opacity: 1;
     visibility: visible;
-}
-
-.albums-list {
-    list-style: none;
-}
-
-.edit-album-button,
-.add-photo-button,
-.specific-album-button {
-    background-color: #2B7A78;
-    color: #FEFFFF;
-    margin: 2px;
-    border-radius: 5px;
-    text-transform: uppercase;
     font-family: Montserrat, sans-serif;
 }
 
-.edit-album-button:hover,
-.add-photo-button:hover,
-.specific-album-button:hover {
-    background-color: #DEF2F1;
+.delete-submit:hover,
+.update-button:hover {
+    background: #DEF2F1;
     color: #2B7A78;
 }
 
-.hold-thumbnail {
+.edit-album-button {
+    background-color: #2B7A78;
+    color: #DEF2F1;
+    border-radius: 5px;
     margin: 5px;
+    height: 20px;
+    text-transform: uppercase;
+    font-family: Source Sans Pro, sans-serif;
+    border: 2px solid #2B7A78;
+}
+
+.add-photo-button-album,
+.specific-album-button {
+    background-color: #2B7A78;
+    color: #DEF2F1;
+    border-radius: 5px;
+    margin: 5px;
+    height: 30px;
+    text-transform: uppercase;
+    font-family: Source Sans Pro, sans-serif;
+    border: 2px solid #2B7A78;
+}
+
+.edit-album-button:hover,
+.add-photo-button-album:hover,
+.specific-album-button:hover {
+    background-color: #3AAFA9;
+    color: #DEF2F1;
 }
 
 .album-thumbnail {
     height: 100px;
     width: 100px;
+    border-radius: 5px;
+}
+
+.create-album-div {
+    margin: 20px;
+    text-align: center;
 }
 
 .create-an-album {
-    background-color: #3AAFA9;
+    background-color: #2B7A78;
     color: #DEF2F1;
     border: 2px solid #17252A;
     height: 30px;
     text-transform: uppercase;
     box-shadow: 1px 1px 1px #2B7A78;
-    font-family: Montserrat, sans-serif;
+    font-family: Source Sans Pro, sans-serif;
     font-size: 15px;
-    text-shadow: 1px 1px 1px #17252A;
+    border: 2px solid #2B7A78;
     margin: 10px;
     border-radius: 5px;
 }
 
 .create-an-album:hover {
-    background-color: #17252A;
-    color: #3AAFA9;
-    text-shadow: 1px 0px 0px #3AAFA9;
-}
-
-.space {
-    margin: 5px;
+    background-color: #DEF2F1;
+    color: #2B7A78;
 }
 
 .profile-welcome {
     font-family: Montserrat, sans-serif;
-    margin: 15px;
     color: #DEF2F1;
     text-shadow: 2px 2px 2px #17252A;
-}
-
-.oh-hey-there {
-    display: block;
-    position: relative;
-    width: 550px;
-    border-radius: 15px;
-    background-color: #2B7A78;
-    box-shadow: 5px 10px;
-    overflow: hidden;
-}
-
-.albums-list-outer {
-    display: inline-block;
-    position: relative;
-    width: 400px;
-    height: 100px;
-    margin: 10px;
-    padding: 25px;
     text-align: center;
 }
 
-.album-specific-div {
+.album-list-outer-div {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    margin-top: 15px;
+    align-self: center;
+    width: 100%;
+    border-radius: 15px;
+    background-color: #2B7A78;
+    box-shadow: 5px 10px;
+}
+
+.albums-list-outer {
     background-color: #DEF2F1;
     width: 250px;
     border-radius: 15px;
     box-shadow: 5px 10px;
-    margin: 15px;
+    margin: 25px;
+    text-align: center;
 }
 
-.user-album-title,
-.user-album-description {
+.user-album-title {
     font-family: Montserrat, sans-serif;
     font-weight: 500;
+    font-size: 20px;
     text-transform: uppercase;
     color: #3AAFA9;
     text-shadow: 1px 1px 1px #17252A;
+    margin: 5px;
+}
+
+.user-album-description {
+    font-family: Source Sans Pro, sans-serif;
+    text-transform: uppercase;
+    color: #3AAFA9;
     margin: 5px;
 }

@@ -27,15 +27,11 @@ const handleRoute = () => {
 
 return ( <> { photoState &&
     <>
-    <div className='oh-hey-there'>
-    <div>
-        <div className='space'></div>
-        <h2 className='profile-welcome'>Oh hey there, {sessionUser.username}</h2>
-    <div>
-        <button onClick={handleRoute} className='create-an-album'>Create An Album</button>
+    <h2 className='profile-welcome'>Oh hey there, {sessionUser.username}</h2>
+    <div className='create-album-div'>
+    <button onClick={handleRoute} className='create-an-album'>Create An Album</button>
     </div>
-    </div>
-    <div>
+    <div className='album-list-outer-div'>
     {albums.map((album) => {
         if (album.userId === currentUserId) {
             return (
@@ -45,9 +41,10 @@ return ( <> { photoState &&
         return [];
     })}
     </div>
-    </div>
     </>
-} </> );
+} 
+    </> 
+);
 }
 
 export default EditAlbumModal;

@@ -48,7 +48,7 @@
 .add-photo-button,
 .specific-photo-button {
     background-color: #2B7A78;
-    color: #FEFFFF;
+    color: #DEF2F1;
     border-radius: 5px;
     margin: 5px;
     height: 30px;
@@ -64,5 +64,5 @@
 
 .specific-photo-button:hover {
     background-color: #3AAFA9;
-    color: #FEFFFF;
+    color: #DEF2F1;
 }

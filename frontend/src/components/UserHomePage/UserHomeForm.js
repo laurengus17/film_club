@@ -39,9 +39,10 @@ function UserHomePage ({ album }) {
     }
 
     return (
-    <div>
-        <div> 
+    <div className='edit-album-outer'>
+        <div className='edit-album-structure'> 
             <form onSubmit={() => handleSubmit(album.id)} className='edit-form'>
+                <h2 className='edit-album-title'>Edit Album</h2>
                 <div className='edit-div'>
                 <input 
                 className='input'
