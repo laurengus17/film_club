@@ -23,7 +23,7 @@ function UserAlbumContent() {
     const albumIdInteger = parseInt(albumId, 10)
 
     const currentAlbum = albums.filter((album) => album.id === albumIdInteger)
-    console.log(currentAlbum)
+    console.log('CURRENT ALBUM', currentAlbum)
     const myAlbum = () => {
         const albumPhotos = photos.filter((photo) => photo.albumId === albumIdInteger)
             if(albumPhotos) {
