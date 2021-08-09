@@ -13,11 +13,52 @@
 }
 
 .footer-left {
-    list-style: none;
     display: flex;
+    margin-top: 5px;
 }
 
 .footer-right {
-    list-style: none;
     display: flex;
+    font-family: Montserrat, sans-serif;
+    font-style: italic;
+    margin-left: 70px;
+    margin-top: 10px;
+    padding: 4px;
+}
+
+.personal_link > i {
+    color: #3AAFA9;
+    margin: 2px;
+}
+
+.personal_link > i:hover {
+    color: #2B7A78;
+}
+
+.project_repo {
+    background-color: #3AAFA9;
+    color: #FEFFFF;
+    height: 18px;
+    padding: 5px;
+    margin: 4px;
+    border-radius: 2px;
+    font-family: Montserrat, sans-serif;
+    font-size: 14px;
+    text-align: center;
+}
+
+.project_repo:hover {
+    background-color: #2B7A78;
+}
+
+.project_link {
+    text-decoration: none;
+    color: inherit;
+    padding-bottom: 4px;
+    margin: 4px;
+}
+
+.my-name {
+    font-size: 14px;
+    color: #3AAFA9;
 }
