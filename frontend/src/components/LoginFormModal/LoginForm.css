@@ -6,7 +6,9 @@
     text-transform: uppercase;
     border-radius: 2px;
     margin-left: 5px;
+    margin-right: 5px;
     margin-bottom: 10px;
+    font-family: Montserrat, sans-serif;
 }
 
 .nav-login:hover {

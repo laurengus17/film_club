@@ -20,15 +20,16 @@ li {
 
 .home-outer-div {
     display: grid;
-    left: 50%;
-    width: 100%;
+    width: 80%;
+    height: 80%;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(5, 1fr);
     row-gap: 45px;
-    align-self: center;
     border-radius: 15px;
     background-color: #2B7A78;
     box-shadow: 5px 10px;
+    margin-left: 10%;
+    margin-bottom: 20px;
 }
 
 .user-profiles-div {
@@ -37,8 +38,9 @@ li {
     justify-content: center;
     width: 150px;
     height: 80px;
-    margin-top: 30px;
-    padding: 10px;
+    margin-top: 35px;
+    margin-left: 15px;
+    padding: 20px;
     text-align: center;
 }
 

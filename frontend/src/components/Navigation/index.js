@@ -56,12 +56,12 @@ if (sessionUser) {
 return (
 <div className='outer-navigation'>
     <nav className='navbar_container'>
-        <ul className='navigation'>
+        <li className='navigation'>
             <div className='bar'>
                 <button className='home_button' onClick={handleHome}>Home</button>
             </div>
                 {isLoaded && sessionLinks}
-        </ul>
+        </li>
     </nav>
 </div>
 );
