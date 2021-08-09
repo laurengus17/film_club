@@ -51,11 +51,16 @@
     background-color: #2B7A78;
     color: #DEF2F1;
     border-radius: 5px;
-    margin: 5px;
     height: 30px;
     text-transform: uppercase;
-    font-family: Source Sans Pro, sans-serif;
     border: 2px solid #2B7A78;
+}
+
+.add-photo-button {
+    font-family: Montserrat, sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    margin: 10px;
 }
 
 .add-photo-button:hover {
