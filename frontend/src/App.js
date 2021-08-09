@@ -4,6 +4,7 @@ import { Route, Switch } from 'react-router-dom';
 import SignupFormPage from "./components/SignupFormPage";
 import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
+import Footer from './components/Footer';
 import AlbumForm from './components/AlbumFormPage/AlbumForm';
 import UserHomePage from './components/UserHomePage'
 import UserAlbumContent from './components/UserAlbums/UserAlbumContent'
@@ -21,6 +22,7 @@ function App() {
   return isLoaded && (
   <>
     <Navigation isLoaded={isLoaded} />
+    <Footer />
     {isLoaded && (
       <Switch>
         <Route exact path="/">
