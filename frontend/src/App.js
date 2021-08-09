@@ -22,23 +22,22 @@ function App() {
   return isLoaded && (
   <>
     <Navigation isLoaded={isLoaded} />
-    <Footer />
     {isLoaded && (
       <Switch>
         <Route exact path="/">
           <HomePageLanding />
+          <Footer />
         </Route>
-
         <Route path="/signup">
           <SignupFormPage />
         </Route>
-
         <Route path="/api/album">
           <AlbumForm />
+          <Footer />
         </Route>
-
         <Route path='/users/:userId'>
           <UserHomePage />
+          <Footer />
         </Route>
 
         {/* <Route path='/api/photo/create/:albumId'>
@@ -47,12 +46,13 @@ function App() {
 
         <Route path='/content/:albumId'>
           <UserAlbumContent />
+          <Footer />
         </Route>
 
         <Route path='/display/:photoId'>
           <PhotoPage />
+          <Footer />
         </Route>
-
       </Switch>
     )}
   </>
