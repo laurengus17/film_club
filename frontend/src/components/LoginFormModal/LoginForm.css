@@ -1,12 +1,3 @@
-body {
-    position: relative;
-    background-color: #3AAFA9;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: Arial, Helvetica, sans-serif;
-}
-
 .nav-login {
     background: #3AAFA9;
     color: #FEFFFF;
@@ -15,7 +6,9 @@ body {
     text-transform: uppercase;
     border-radius: 2px;
     margin-left: 5px;
+    margin-right: 5px;
     margin-bottom: 10px;
+    font-family: Montserrat, sans-serif;
 }
 
 .nav-login:hover {

@@ -5,7 +5,7 @@
 
 .navbar_container {
     margin-top: 20px;
-    margin-right: 50%;
+    margin-left: 29%;
     justify-content: center;
     background-color: #DEF2F1;
     padding: 10px;
@@ -37,6 +37,11 @@
     margin-left: 5px;
     margin-bottom: 10px;
     font-family: Montserrat, sans-serif;
+}
+
+.demo_user {
+    margin-top: 5px;
+    margin-left: 5px;
 }
 
 .home_button:hover,

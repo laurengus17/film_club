@@ -4,6 +4,7 @@ import { Route, Switch } from 'react-router-dom';
 import SignupFormPage from "./components/SignupFormPage";
 import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
+import Footer from './components/Footer';
 import AlbumForm from './components/AlbumFormPage/AlbumForm';
 import UserHomePage from './components/UserHomePage'
 import UserAlbumContent from './components/UserAlbums/UserAlbumContent'
@@ -25,18 +26,18 @@ function App() {
       <Switch>
         <Route exact path="/">
           <HomePageLanding />
+          <Footer />
         </Route>
-
         <Route path="/signup">
           <SignupFormPage />
         </Route>
-
         <Route path="/api/album">
           <AlbumForm />
+          <Footer />
         </Route>
-
         <Route path='/users/:userId'>
           <UserHomePage />
+          <Footer />
         </Route>
 
         {/* <Route path='/api/photo/create/:albumId'>
@@ -45,12 +46,13 @@ function App() {
 
         <Route path='/content/:albumId'>
           <UserAlbumContent />
+          <Footer />
         </Route>
 
         <Route path='/display/:photoId'>
           <PhotoPage />
+          <Footer />
         </Route>
-
       </Switch>
     )}
   </>

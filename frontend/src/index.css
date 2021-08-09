@@ -1,1 +1,5 @@
 /* TODO Add site wide styles */
+html, body {
+    background-color: #3AAFA9;
+    margin: 0px;
+}
