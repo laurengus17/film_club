@@ -17,10 +17,11 @@
 }
 
 .form-outer {
-    background-color: #222;
+    background-color: #2B7A78;
+    box-shadow: 5px 10px;
 	border-radius: 15px;
-	height: 550px;
-	width: 350px;
+	height: 450px;
+	width: 450px;
 	position: relative;
 	overflow: hidden;
 }
@@ -40,6 +41,7 @@
     font-size: 1.7em;
     text-align: center;
     font-family: Montserrat, sans-serif;
+    font-weight: 800;
 }
 
 .login-body {
@@ -49,6 +51,7 @@
     margin-top: 50px;
     opacity: 1;
     visibility: visible;
+    font-family: Source Sans Pro, sans-serif;
 }
 
 .input {
@@ -83,6 +86,6 @@
 }
 
 .login-button:hover {
-    background: #2B7A78;
-    color: #DEF2F1;
+    background: #DEF2F1;
+    color: #2B7A78;
 }
