@@ -9,13 +9,12 @@ li {
     list-style: none;
 }
 
-.welcome {
-    text-shadow: 1px 1px 1px #2B7A78;
-}
 .welcome,
 .meet-users {
+    color: #DEF2F1;
+    text-shadow: 1px 1px 1px #2B7A78;
     text-align: center;
-    font-family: Montserrat;
+    font-family: Montserrat, sans-serif;
 }
 
 .home-outer-div {
@@ -27,7 +26,7 @@ li {
     row-gap: 45px;
     border-radius: 15px;
     background-color: #2B7A78;
-    box-shadow: 5px 10px;
+    box-shadow: 5px 10px #17252A;
     margin-left: 10%;
     margin-bottom: 20px;
 }
@@ -47,7 +46,6 @@ li {
 
 .user-usernames {
     font-family: Source Sans Pro, sans-serif;
-    text-transform: uppercase;
     color: #3AAFA9;
-    text-shadow: 0px 1px 0px #17252A;
+    text-shadow: 1px 1px 0px #17252A;
 }

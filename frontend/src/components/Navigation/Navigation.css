@@ -109,22 +109,22 @@
     flex-direction: column;
     height: 250px;
     width: 200px;
-    box-shadow: 1px 1px 1px #2B7A78;
+    box-shadow: 1px 0px 5px #17252A;
     border: 2px solid #2B7A78;
     border-radius: 5px;
 }
 
 .profile-dropdown li {
     padding: 5px; 
-    margin: 5px;
     list-style: none;
     text-align: center;
 }
 
 .list-dropdown {
     font-family: Montserrat, sans-serif;
-    color: #17252A;
-    font-weight: 600;
+    color: #2B7A78;
+    font-size: 14px;
+    font-weight: bold;
 }
 
 .user-logout-button {
@@ -134,6 +134,7 @@
     border-radius: 2px;
     height: 30px;
     text-transform: uppercase;
+    margin-top: 5px;
 }
 
 .user-logout-button:hover {
