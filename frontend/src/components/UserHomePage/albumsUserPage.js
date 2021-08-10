@@ -5,6 +5,7 @@ import { useHistory } from 'react-router-dom';
 import { getAlbums } from '../../store/album';
 import UserHomePage from './UserHomeForm';
 import { getPhotos } from '../../store/photo';
+import AddPhotoAlbumModal from '../PhotoForm/AddPhotoAlbumModal';
 import './UserHomePage.css';
 
 function SeparateAlbum({ album }) {
@@ -32,10 +33,6 @@ function SeparateAlbum({ album }) {
     }, [dispatch]);
 
 
-    const handleRoute = () => {
-        history.push(`/api/photo/create/${album.id}`)
-    }
-
     const albumRoute = () => {
         history.push(`/content/${album.id}`)
     }
@@ -46,7 +43,7 @@ function SeparateAlbum({ album }) {
                         <button onClick={() => setActive(true)} className='edit-album-button'>Edit</button>
                         <div className='hold-thumbnail'>{myImage()}</div>
                         <button onClick={albumRoute} className='specific-album-button'>{album.title}</button>
-                        <button onClick={handleRoute} className='add-photo-button-album'>Add Photo</button>
+                        <AddPhotoAlbumModal albumId={album.id} />
                         {active && (
                             <Modal onClose={() => setActive(false)}>
                                 <UserHomePage album={album}/>

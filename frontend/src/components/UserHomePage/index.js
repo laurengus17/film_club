@@ -4,6 +4,7 @@ import { useHistory } from 'react-router-dom';
 import { getAlbums } from '../../store/album';
 import { getPhotos } from '../../store/photo'
 import SeparateAlbum from './albumsUserPage';
+import CreateAlbumModal from '../AlbumFormPage/CreateAlbumModal';
 import './UserHomePage.css';
 
 function EditAlbumModal() {
@@ -21,15 +22,12 @@ useEffect(() => {
     dispatch(getPhotos())
 }, [dispatch]);
 
-const handleRoute = () => {
-    history.push(`/api/album`)
-}
 
 return ( <> { photoState &&
     <>
     <h2 className='profile-welcome'>Oh hey there, {sessionUser.username}</h2>
     <div className='create-album-div'>
-    <button onClick={handleRoute} className='create-an-album'>Create An Album</button>
+        <CreateAlbumModal />
     </div>
     <div className='album-list-outer-div'>
     {albums.map((album) => {

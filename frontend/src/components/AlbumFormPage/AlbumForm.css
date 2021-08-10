@@ -1,17 +1,16 @@
 .outer-div {
 	overflow: hidden;
-    display: block;
     position: relative;
     width: 400px;
     height: 400px;
     border-radius: 15px;
     background-color: #2B7A78;
-    box-shadow: 5px 10px;
+    box-shadow: 5px 10px #17252A;
 }
 
 .form-div {
     position: absolute;
-    top: 40%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 65%;
@@ -34,6 +33,7 @@
     margin-top: 50px;
     opacity: 1;
     visibility: visible;
+    font-family: Source Sans Pro, sans-serif;
 }
 
 .input {
