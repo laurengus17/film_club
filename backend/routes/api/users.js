@@ -37,6 +37,13 @@ router.get('/', asyncHandler(async (req, res) => {
     res.json(albums);
 }))
 
+// user profile page
+router.get('/:id', asyncHandler(async (req, res) => {
+    const { id } = req.params;
+    const user = await User.findByPk(id);
+    res.json(user);
+}))
+
 // Sign up
 // Connect the singleMulterUpload middleware to your POST /api/users route, and 
 // then you can access the file in your request under the key of file - req.file

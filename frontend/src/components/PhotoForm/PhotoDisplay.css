@@ -1,47 +1,57 @@
 .specific-photo {
-    height: 100%;
-    width: 100%;
-    margin: auto;
+    height: 70%;
+    width: 70%;
+    margin-left: 15%;
+    margin-top: 3%;
+    border-radius: 15px;
 }
 
 .photo-display-outer {
-    /* overflow: hidden;
-    display: block;
-    position: relative;
-    width: 400px;
-    height: 550px;
+    margin-left: 10%;
+    margin-top: 15px;
+    margin-bottom: 25px;
+    width: 80%;
+    height: 70%;
     border-radius: 15px;
     background-color: #2B7A78;
-    box-shadow: 5px 10px; */
+    box-shadow: 5px 10px #17252A;
 }
 
-.specific-photo {
-    display: inline-block;
-    justify-content: center;
-    margin: 20px;
-}
-
-.photo-title,
-.photo-description {
+.photo-title {
     font-family: Montserrat, sans-serif;
-    margin: 10px;
     color: #DEF2F1;
     text-shadow: 2px 2px 2px #17252A;
     text-align: center;
 }
 
+.photo-description {
+    font-family: Source Sans Pro, sans-serif;
+    font-size: 20px;
+    color: #3AAFA9;
+    text-align: center;
+}
+
+.photo-buttons {
+    margin-left: 40%;
+}
+
 .edit-button,
 .delete-button {
-    background-color: #2B7A78;
-    color: #FEFFFF;
-    border-radius: 5px;
-    margin: 5px;
+    background-color: #3AAFA9;
+    color: #DEF2F1;
+    height: 30px;
+    width: 15%;
     text-transform: uppercase;
-    font-family: Montserrat, sans-serif;
+    font-family: Source Sans Pro, sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    border: 2px solid #3AAFA9;
+    border-radius: 5px;
+    margin: 8px;
 }
 
 .edit-button:hover,
 .delete-button:hover {
-    background-color: #DEF2F1;
-    color: #2B7A78;
+    background-color: #2B7A78;
+    color: #DEF2F1;
 }

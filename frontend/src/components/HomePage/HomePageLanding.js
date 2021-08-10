@@ -1,7 +1,5 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getPhotos } from '../../store/photo';
-import { getAlbums } from '../../store/album';
 import { getUsers } from '../../store/session';
 import UserDisplay from './UserDisplay';
 import './HomePageLanding.css';
@@ -10,15 +8,9 @@ import './HomePageLanding.css';
 function HomePageLanding() {
 const dispatch = useDispatch();
 const users = useSelector(state => state.session.list.map((id) => state.session[id]));
-const photoState = useSelector(state => state.photos);
-const photos = Object.values(photoState);
-const albumState = useSelector(state => state.albums);
-const albums = Object.values(albumState);
 
 useEffect(() => {
-dispatch(getAlbums())
-dispatch(getPhotos())
-dispatch(getUsers())
+    dispatch(getUsers())
 }, [dispatch]);
 
 return (

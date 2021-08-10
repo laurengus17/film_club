@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Redirect } from "react-router-dom";
+import { getUsers } from '../../store/session';
 import * as sessionActions from "../../store/session";
 import './SignupForm.css';
 
@@ -16,9 +16,9 @@ const [image, setImage] = useState(null);
   //   const [images, setImages] = useState([]);
 const [errors, setErrors] = useState([]);
 
-if (sessionUser) return (
-    <Redirect to="/" />
-) 
+if (sessionUser) {
+    dispatch(getUsers())
+}
 
 const handleSubmit = (e) => {
     e.preventDefault();
@@ -100,18 +100,6 @@ return (
         </div>
         <button type="submit" className='signup-button'>Sign Up</button>
         </form>
-        <div>
-            {sessionUser && (
-            <div>
-                <h1>{sessionUser.username}</h1>
-                <img
-                style={{ width: "150px" }}
-                src={sessionUser.profileImageUrl}
-                alt="profile"
-                />
-            </div>
-            )}
-        </div>
     </div>
 </div>
 );

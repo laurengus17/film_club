@@ -32,26 +32,22 @@ const myPhoto = () => {
     const pagePhoto = photos.filter((photo) => photo.id === photoIdInteger)
     if(pagePhoto.length) {
         return (
+            <>
+            <h2 className='photo-title'>{pagePhoto[0].title}</h2>
             <div className='photo-display-outer'>
-            <div>
-                <h2 className='photo-title'>{pagePhoto[0].title}</h2>
-            <div className='photo-div'>
                 <img src={pagePhoto[0].url} alt='my-display' className='specific-photo'/>
-            </div>
                 <p className='photo-description'>{pagePhoto[0].description}</p>
-            <div>
-                <button className='edit-button' onClick={() => setActive(true)}>Edit</button>
+                <div className='photo-buttons'>
+                    <button className='edit-button' onClick={() => setActive(true)}>Edit</button>
+                    <button className='delete-button' onClick={() => handleDelete(pagePhoto[0].id)}>Delete</button>
+                </div>
+                {active && (
+                <Modal onClose={() => setActive(false)}>
+                    <UpdatePhotoForm photo={pagePhoto[0]}/>
+                </Modal>
+                )}
             </div>
-            <div>
-                <button className='delete-button' onClick={() => handleDelete(pagePhoto[0].id)}>Delete</button>
-            </div>
-            {active && (
-            <Modal onClose={() => setActive(false)}>
-                <UpdatePhotoForm photo={pagePhoto[0]}/>
-            </Modal>
-            )}
-            </div>
-            </div>
+            </>
         )
     }
 }

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { getPhotos, updatePhoto} from '../../store/photo';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
-import './PhotoForm.css';
+import './UpdatePhotoForm.css';
 
 function UpdatePhotoForm ({ photo }) {
 const dispatch = useDispatch();
@@ -12,6 +12,7 @@ const photos = Object.values(photoState);
 
 const [title, setTitle] = useState('');
 const [description, setDescription] = useState('');
+const [errors, setErrors] = useState([]);
 
 useEffect(() => {
     dispatch(getPhotos())
@@ -35,33 +36,35 @@ const handleSubmit = async (e) => {
 }
 
 return (
-    <div className='form-outer-div'>
-    <div className='form-body'> 
-        <form onSubmit={handleSubmit} className='edit-form'>
-            <div className='edit-div'>
-            <input 
-            className='input'
-            placeholder={photo.title}
-            type='text'
-            value={title}
-            onChange={(e) => setTitle(e.target.value)}
-            required> 
-            </input>
-            <input
-            className='input'
-            placeholder={photo.description}
-            type="text"
-            value={description}
-            onChange={(e) => setDescription(e.target.value)}
-            required>
-            </input>
-            </div>
-            <div>
-            <button type='submit' className='update-button'>Update Photo</button>
-            </div>
-        </form>
+    <div className='update-outer-div'>
+        <div className='update-body'> 
+            <form onSubmit={handleSubmit}>
+                <ul>
+                    {errors.map((error, idx) => <li key={idx}>{error}</li>)}
+                </ul>
+                <h2 className='update-h2'>Update Photo</h2>
+                <div className='update-div'>
+                    <input 
+                    className='input'
+                    placeholder={photo.title}
+                    type='text'
+                    value={title}
+                    onChange={(e) => setTitle(e.target.value)}
+                    required> 
+                    </input>
+                    <input
+                    className='input'
+                    placeholder={photo.description}
+                    type="text"
+                    value={description}
+                    onChange={(e) => setDescription(e.target.value)}
+                    required>
+                    </input>
+                </div>
+                <button type='submit' className='update-button'>Update Photo</button>
+            </form>
+        </div>
     </div>
-</div>
 )
 }
 
