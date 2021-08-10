@@ -153,10 +153,11 @@
     margin-top: 15px;
     margin-bottom: 20px;
     width: 80%;
-    height: 80%;
+    height: 50%;
     border-radius: 15px;
     background-color: #2B7A78;
     box-shadow: 5px 10px #17252A;
+    overflow: scroll;
 }
 
 .albums-list-outer {
