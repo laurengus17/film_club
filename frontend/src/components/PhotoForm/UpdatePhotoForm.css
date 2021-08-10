@@ -1,0 +1,73 @@
+.update-outer-div {
+	overflow: hidden;
+    position: relative;
+    width: 400px;
+    height: 400px;
+    border-radius: 15px;
+    background-color: #2B7A78;
+    box-shadow: 5px 10px #17252A;
+}
+
+.update-body{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 65%;
+    z-index: 5;
+}
+
+.update-h2 {
+    color: #DEF2F1;
+    font-size: 1.7em;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: Montserrat, sans-serif;
+    font-weight: 800;
+}
+
+.update-div {
+    border-radius: 15px;
+    background-color: #FEFFFF;
+    overflow: hidden;
+    margin-top: 50px;
+    opacity: 1;
+    visibility: visible;
+    font-family: Source Sans Pro, sans-serif;
+}
+
+.input {
+    border: 0;
+    outline: none;
+    box-shadow: none;
+    display: block;
+    height: 30px;
+    line-height: 30px;
+    padding: 8px 15px;
+    border-bottom: 1px solid #FEFFFF;
+    width: 100%;
+    font-size: 12px;
+    font-family: Source Sans Pro, sans-serif;
+}
+
+.update-button {
+    background-color: rgba(0,0,0,0.4);
+    color: #DEF2F1;
+    border: 0;
+    border-radius: 15px;
+    display: block;
+    margin: 15px auto; 
+    padding: 15px 45px;
+    width: 100%;
+    font-size: 13px;
+    font-family: Montserrat, sans-serif;
+    font-weight: bold;
+    cursor: pointer;
+    opacity: 1;
+    visibility: visible;
+}
+
+.update-button:hover {
+    background: #DEF2F1;
+    color: #2B7A78;
+}
