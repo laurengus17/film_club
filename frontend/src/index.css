@@ -3,3 +3,7 @@ html, body {
     background-color: #3AAFA9;
     margin: 0px;
 }
+
+::-webkit-scrollbar  {
+    display: none;
+}

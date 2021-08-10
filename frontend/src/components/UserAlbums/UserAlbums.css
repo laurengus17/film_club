@@ -1,7 +1,9 @@
 .album-content {
     height: 60%;
     width: 70%;
-    margin: 15px;
+    margin-top: 12%;
+    margin-bottom: 5px;
+    margin-left: 2%;
     border-radius: 5px;
 }
 
@@ -19,15 +21,16 @@
 .album-outer-div {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
     margin-top: 15px;
     margin-left: 10%;
     margin-bottom: 20px;
     width: 80%;
-    height: 80%;
+    height: 50%;
     border-radius: 15px;
     background-color: #2B7A78;
     box-shadow: 5px 10px #17252A;
+    overflow: scroll;
 }
 
 .add-photo {
@@ -37,11 +40,11 @@
 
 .image-div {
     background-color: #DEF2F1;
-    width: 200px;
+    width: 250px;
     height: 250px;
     border-radius: 15px;
-    box-shadow: 5px 10px;
-    margin-left: 10%;
+    box-shadow: 5px 10px #17252A;
+    margin-left: 20%;
     margin-top: 15%;
     text-align: center;
 }
@@ -51,7 +54,6 @@
     background-color: #2B7A78;
     color: #DEF2F1;
     border-radius: 5px;
-    height: 30px;
     text-transform: uppercase;
     border: 2px solid #2B7A78;
 }
@@ -61,6 +63,14 @@
     font-size: 15px;
     font-weight: 600;
     margin: 10px;
+    height: 30px;
+}
+
+.specific-photo-button {
+    font-family: Source Sans Pro, sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    height: 25px;
 }
 
 .add-photo-button:hover {
