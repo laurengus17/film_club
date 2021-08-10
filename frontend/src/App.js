@@ -27,10 +27,10 @@ function App() {
           <HomePageLanding />
           <Footer />
         </Route>
-        <Route path="/signup">
+        <Route path="/signup" exact={true}>
           <SignupFormPage />
         </Route>
-        <Route path='/users/:userId'>
+        <Route path='/users/:userId' exact={true}>
           <UserHomePage />
           <Footer />
         </Route>
@@ -44,7 +44,7 @@ function App() {
           <Footer />
         </Route>
 
-        <Route path='/display/:photoId'>
+        <Route path='/display/:photoId' exact={true}>
           <PhotoPage />
           <Footer />
         </Route>

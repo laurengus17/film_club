@@ -35,7 +35,6 @@ useEffect(() => {
     if (!user) {
         return null;
     }
-console.log('TESTING IF RECEVING USER', user)
 
 
 return ( <> { photoState &&
