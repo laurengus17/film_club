@@ -52,6 +52,7 @@ export const createPhoto = (photo) => async (dispatch) => {
         userId,
         albumId
     } = photo
+
     const formData = new FormData();
     formData.append("title", title);
     formData.append("description", description);

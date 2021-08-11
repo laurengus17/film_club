@@ -37,7 +37,7 @@ function CreatePhotoForm({ albumId }) {
 
         let createdPhoto = await dispatch(createPhoto(payload))
         if (createdPhoto) {
-            history.push(`/users`);
+            history.push(`/content/${albumId}`);
         }
     }
 

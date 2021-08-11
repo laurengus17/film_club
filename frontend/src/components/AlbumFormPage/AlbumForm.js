@@ -30,7 +30,7 @@ function AlbumForm() {
 
         let createdAlbum = await dispatch(createAlbum(payload))
         if (createdAlbum) {
-            history.push(`/users`);
+            history.push(`/users/${sessionUser.id}`);
         }
     }
 
