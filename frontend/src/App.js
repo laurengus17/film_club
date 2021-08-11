@@ -34,16 +34,10 @@ function App() {
           <UserHomePage />
           <Footer />
         </Route>
-
-        {/* <Route path='/api/photo/create/:albumId'>
-          <CreatePhotoForm />
-        </Route> */}
-
         <Route path='/content/:albumId'>
           <UserAlbumContent />
           <Footer />
         </Route>
-
         <Route path='/display/:photoId' exact={true}>
           <PhotoPage />
           <Footer />
