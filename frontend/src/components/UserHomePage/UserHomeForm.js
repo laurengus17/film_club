@@ -49,16 +49,14 @@ function UserHomePage ({ album }) {
                 placeholder={album.title}
                 type='text'
                 value={title}
-                onChange={(e) => setTitle(e.target.value)}
-                required> 
+                onChange={(e) => setTitle(e.target.value)}> 
                 </input>
                 <input
                 className='input'
                 placeholder={album.description}
                 type="text"
                 value={description}
-                onChange={(e) => setDescription(e.target.value)}
-                required>
+                onChange={(e) => setDescription(e.target.value)}>
                 </input>
                 </div>
                 <div>
